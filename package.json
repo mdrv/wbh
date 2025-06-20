@@ -38,7 +38,7 @@
 		"dist"
 	],
 	"scripts": {
-		"b": "tsc && swc ./src/v257 -d ./dist"
+		"b": "tsc && swc --strip-leading-paths ./src/v257 -d ./dist/v257"
 	},
 	"devDependencies": {
 		"@mdn/browser-compat-data": "^6.0.24",
