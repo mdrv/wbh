@@ -28,6 +28,7 @@
 	"devDependencies": {
 		"@mdn/browser-compat-data": "^6.0.24",
 		"@swc/cli": "^0.7.7",
+		"@swc/plugin-transform-imports": "^8.0.3",
 		"caniuse-db": "^1.0.30001723",
 		"is-mobile": "^5.0.0",
 		"redom": "^4.3.0",
