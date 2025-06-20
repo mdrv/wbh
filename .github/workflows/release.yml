@@ -22,6 +22,6 @@ jobs:
           bun-version: latest
       - run: bun i
       - run: bun b
-      - run: bunx npm publish --provenance --access public
+      - run: npm publish --provenance --access public
         env:
-          NPM_CONFIG_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
