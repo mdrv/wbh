@@ -8,13 +8,14 @@ Restrict access to your website from web browsers with(out) specific features.
 ## Examples
 
 ```ts
-import { WBH, WBHLevel as L } from '@mdrv/wbh/v256'
 import {
+  WBH,
+  WBHLevel as L,
   avif,
   fileSystemApi,
   cssAspectRatio,
   /*...*/
-} from '@mdrv/wbh/data'
+} from '@mdrv/wbh'
 
 const wbh = new WBH(
   [
