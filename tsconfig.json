@@ -27,7 +27,11 @@
 		// Some stricter flags (disabled by default)
 		"noUnusedLocals": false,
 		"noUnusedParameters": false,
-		"noPropertyAccessFromIndexSignature": false
+		"noPropertyAccessFromIndexSignature": false,
+        "types": [
+            "bun-types", // add Bun global
+            "web"
+        ]
 	},
 	"include": ["src/v257/*.ts"]
 }
