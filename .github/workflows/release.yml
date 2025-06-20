@@ -20,10 +20,8 @@ jobs:
       - uses: oven-sh/setup-bun@v2
         with:
           bun-version: latest
-          registry-url: 'https://registry.npmjs.org'
-          scope: '@mdrv'
       - run: bun i
       - run: bun b
-      - run: bun publish -p --access public
+      - run: bunx npm publish --provenance --access public
         env:
           NPM_CONFIG_TOKEN: ${{ secrets.NPM_TOKEN }}
