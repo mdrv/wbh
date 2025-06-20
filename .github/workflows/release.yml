@@ -24,8 +24,6 @@ jobs:
           scope: '@mdrv'
       - run: bun i
       - run: bun b
-      - run: bunx npm publish --provenance --access public
+      - run: bun publish -p --access public
         env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           NPM_CONFIG_TOKEN: ${{ secrets.NPM_TOKEN }}
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
