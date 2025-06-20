@@ -7,8 +7,8 @@
 		"module": "ESNext",
 		"moduleDetection": "force",
 
-		"outDir": "./dist/v257",
-		"rootDir": "./src/v257",
+		"outDir": "./dist/",
+		"rootDir": "./src/",
 		"declaration": true,
 		"emitDeclarationOnly": true,
 		"isolatedDeclarations": true,
@@ -29,5 +29,5 @@
 		"noUnusedParameters": false,
 		"noPropertyAccessFromIndexSignature": false,
 	},
-	"include": ["src/v257/*.ts"]
+	"include": ["src/v*/**/*.ts"]
 }
