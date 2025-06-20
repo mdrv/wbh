@@ -2,28 +2,43 @@
 	"name": "@mdrv/wbh",
 	"version": "257.0.0",
 	"description": "Restrict access to your website from web browsers with(out) specific features.",
-	"scripts": {
-		"b": "tsc && swc ./src/v257 -d ./dist"
-	},
-	"author": {
-		"name": "Umar Alfarouk",
-		"email": "medrivia@gmail.com",
-		"url": "https://alfarouk.id"
-	},
-	"license": "GPL-3.0",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/mdrv/wbh.git"
-	},
-	"keywords": ["browsers", "caniuse", "support", "target"],
+	"keywords": [
+		"browsers",
+		"caniuse",
+		"support",
+		"target"
+	],
 	"homepage": "https://github.com/mdrv/wbh",
 	"bugs": {
 		"url": "https://github.com/mdrv/wbh/issues"
 	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/mdrv/wbh.git"
+	},
+	"license": "GPL-3.0",
+	"author": "Umar Alfarouk <medrivia@gmail.com> (https://alfarouk.id)",
+	"type": "module",
 	"exports": {
-		".": ["./dist/v257/index.js", "./src/v257/index.ts"],
-		"./mount": ["./dist/v257/mount.js", "./src/v257/mount.ts"],
-		"./data": ["./dist/v257/data.js", "./src/v257/data.ts"]
+		".": [
+			"./dist/v257/index.js",
+			"./src/v257/index.ts"
+		],
+		"./mount": [
+			"./dist/v257/mount.js",
+			"./src/v257/mount.ts"
+		],
+		"./data": [
+			"./dist/v257/data.js",
+			"./src/v257/data.ts"
+		]
+	},
+	"main": "dist/v257/index.js",
+	"files": [
+		"dist"
+	],
+	"scripts": {
+		"b": "tsc && swc ./src/v257 -d ./dist"
 	},
 	"devDependencies": {
 		"@mdn/browser-compat-data": "^6.0.24",
@@ -33,6 +48,5 @@
 		"is-mobile": "^5.0.0",
 		"redom": "^4.3.0",
 		"snarkdown": "^2.0.0"
-	},
-	"type": "module"
+	}
 }
