@@ -1,6 +1,6 @@
 {
 	"name": "@mdrv/wbh",
-	"version": "257.0.1",
+	"version": "257.0.2",
 	"description": "Restrict access to your website from web browsers with(out) specific features.",
 	"keywords": [
 		"browsers",
@@ -38,7 +38,7 @@
 		"dist"
 	],
 	"scripts": {
-		"b": "tsc && swc --strip-leading-paths ./src/v257/v*/ -d ./dist/"
+		"b": "tsc && swc --strip-leading-paths ./src/v*/ -d ./dist/"
 	},
 	"devDependencies": {
 		"@mdn/browser-compat-data": "^6.0.24",
