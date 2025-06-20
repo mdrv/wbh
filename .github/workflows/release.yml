@@ -1,0 +1,20 @@
+name: Release
+
+on:
+  release:
+    types: [published]
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+          registry-url: 'https://registry.npmjs.org'
+          scope: '@mdrv'
+      - run: bun install
+      - run: bun build
+      - run: bunx npm publish --provenance --access public
