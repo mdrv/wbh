@@ -24,8 +24,9 @@ Restrict access to your website from web browsers with(out) specific features.
 
 ## 📷 Screenshot
 
-![Example screenshot (dark mode, AVIF)](./res/example1-dark.avif#gh-dark-mode-only)
-![Example screenshot (light mode, AVIF)](./res/example1-light.avif#gh-light-mode-only)
+| Dark | Light |
+| :--: | :---: |
+| ![Example screenshot (dark mode, AVIF)](./res/example1-dark.avif) | ![Example screenshot (light mode, AVIF)](./res/example1-light.avif) |
 
 >   [!NOTE]
 >   If you can’t see the screenshot above, that means your browser does not support [AVIF image format](https://caniuse.com/avif)!

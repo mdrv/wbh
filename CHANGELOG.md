@@ -1,26 +1,31 @@
 # CHANGELOG
 
-## [257.1.0] - 2025-06-21
+## [v257.1] - 2025-06-21
 
 ### Added
 
--   You can now customize both header and footer (via `mountError`’s 3rd argument).
+-   You can now customize both header and footer (via `mountError`’s 3rd parameter).
+    -   💡 Property names: `headerEl` (also accepts Markdown), `footerMd`
+-   `v257.1.1`: You can now install via `npm i wbh` (experimental)
 
 ### Changed
 
 -   Removed (slightly) the developer’s own branding.
 -   A little change to how header is styled via CSS.
+-   `v257.1.1`: Improved and slightly distinct docs (on both NPM and GitHub)
 
 ### Fixed
 
 -   You can import `mountError` directly from `@mdrv/wbh`
--   Enforce version to use on your project by importing from `@mdrv/wbh/v257`
-    -   💡 The next version will have breaking changes while still keeping the previous one.
+-   Enforce version to use on your project via import from `@mdrv/wbh/v257`
+    -   💡 The next version `v260` might break the API, so you can keep the previous one.
 
 ### Known Bugs
 
 -   Several feature data don’t pass TypeScript checker.
 
-## [257.0.3] - 2025-06-21
+## [v257.0] - 2025-06-21
  
-INITIAL RELEASE ⛅
+**INITIAL RELEASE!** ⛅
+
+Check out [the repo](https://github.com/mdrv/wbh) to know more about this project.
