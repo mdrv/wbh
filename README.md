@@ -12,24 +12,28 @@ Restrict access to your website from web browsers with(out) specific features.
 
 >   [!CAUTION]
 >   The API of this module is **rapidly changing** and is not intended for production or commercial use.
+>
 >   You can expect the next major version (`v260`) to be **much more stable**. 🌟
 
-## Features
+## 🎁 Features
 
 -   📊 Pick from [50+ browser features](wiki/Feature-list.md) (more coming soon...)
 -   🎛️ Customizable (set level, score and wisdom as you like)
 -   🌲 Tree-shakeable (only import features you need)
 -   🚀 Easy to use: comes with `mountError` function
 
-## Examples
+## 📷 Screenshot
 
 ![Example screenshot (dark mode, AVIF)](./res/example1-dark.avif#gh-dark-mode-only)
 ![Example screenshot (light mode, AVIF)](./res/example1-light.avif#gh-light-mode-only)
 
->   [!INFO]
+>   [!NOTE]
 >   If you can’t see the image, that means your browser does not support AVIF!
 
+## 🧭 Examples
+
 ```ts
+/* Import the main class, level (1–4) and feature items */
 import {
   WBH,
   WBHLevel as L,
@@ -70,8 +74,7 @@ const target = document.getElementById('__app__')
 
 wbh.lastResultAsync.then((result) => {
   if (result.score >= 0) {
-    /* Mount your actual app here. */
-    /* ... */
+    /* Mount your actual app here! */
   } else {
     import('@mdrv/wbh/mount').then(({ mountError }) =>
       mountError(result, target, {
@@ -85,16 +88,21 @@ wbh.lastResultAsync.then((result) => {
 })
 ```
 
-## Release Info
+## 🔔 Release Info
 
-This package uses Gregorian YYM-based versioning system (ex. _v257 = July 2025_).
+This package uses (the author’s own term) **Gregorian YYM-based** version system.
 
-See [CHANGELOG](CHANGELOG.md) for (future) breaking changes and fixes.
+-   `v257`: (current) Released on/before July 2025. 📅
+-   `v260`: To be released on October–December 2025. 🚀
 
-## Thanks
+See [CHANGELOG](CHANGELOG.md) for breaking changes, updates and fixes.
+
+## 💖 Thank You
+
+This project is proudly using these libraries:
 
 -   🎨 [RE:DOM (the most versatile and lightweight DOM library/helpers I’ve ever used)](https://github.com/redom/redom)
 -   📑 [Snarkdown (a very minimalist Markdown-to-HTML library)](https://github.com/developit/snarkdown)
--   📚 [MDN](https://github.com/mdn/browser-compat-data) and [Can I use...](https://github.com/Fyrd/caniuse) for additional data
+-   📚 [MDN](https://github.com/mdn/browser-compat-data) and [Can I use...](https://github.com/Fyrd/caniuse) for additional data regarding browser support.
 
 ###### © 2025 MEDRIVIA ／ Umar Alfarouk
