@@ -17,7 +17,7 @@ Restrict access to your website from web browsers with(out) specific features.
 
 ## 🎁 Features
 
--   📊 Pick from [50+ browser features](wiki/Feature-list.md) (more coming soon...)
+-   📊 Pick from [50+ browser features](https://github.com/mdrv/wbh/wiki/feature-list) (more coming soon...)
 -   🎛️ Customizable (set level, score and wisdom as you like)
 -   🌲 Tree-shakeable (only import features you need)
 -   🚀 Easy to use: comes with `mountError` function
