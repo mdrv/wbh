@@ -31,10 +31,10 @@ Restrict access to your website from web browsers with(out) specific features.
 >   [!NOTE]
 >   If you can’t see the screenshot above, that means your browser does not support [AVIF image format](https://caniuse.com/avif)!
 
-## 🧭 Examples
+## 🧭 Example Code
 
 ```ts
-/* Import the main class, level (1–4) and feature items */
+/* Import the main class, level (0–3) and feature items */
 import {
   WBH,
   WBHLevel as L,
@@ -48,22 +48,21 @@ const wbh = new WBH(
   [
     {
       feat: avif,
-      level: L.CRITICAL,
+      level: L.CRITICAL, // 0
       score: 50,
       wisdom: 'Most images hosted on this website are highly-optimized AVIF files.',
     },
     {
       feat: fileSystemApi,
-      level: L.CRITICAL,
+      level: L.IMPORTANT, // 1
       score: 50,
       wisdom: 'Needed to store binary data locally in an organized manner.',
     },
     {
       feat: cssAspectRatio,
-      level: L.CRITICAL,
+      level: L.OPTIONAL, // 2
       score: 49,
-      wisdom:
-      'There are layouts/containers that depend on aspect ratio of their surroundings.',
+      wisdom: 'Some layouts/containers depend on aspect ratio of their surroundings.',
     },
     /*...*/
   ],
@@ -79,7 +78,7 @@ wbh.lastResultAsync.then((result) => {
   } else {
     import('@mdrv/wbh/mount').then(({ mountError }) =>
       mountError(result, target, {
-        /* You can customize footer with DOM element/Markdown */
+        /* You can customize header with DOM element/Markdown */
         headerEl: 'Oops! :(',
         /* You can customize footer with Markdown */
         footerMd: '[Powered by **@mdrv/wbh**](https://github.com/mdrv/wbh)',
@@ -93,8 +92,8 @@ wbh.lastResultAsync.then((result) => {
 
 This package uses **Gregorian YYM-based** version system.
 
--   `v257` **(latest)**: Released on/before July 2025. 📅
--   `v260`: To be released on October–December 2025. 🚀
+-   📅 `v257` **(latest)**: Released on/before July 2025.
+-   🚀 `v260`: To be released on October–December 2025.
 
 See [CHANGELOG](CHANGELOG.md) for breaking changes, updates and fixes.
 

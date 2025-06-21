@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## [v257.1] - 2025-06-21
+## [v257.1] - 2025-06-21 (current)
 
 ### Added
 
@@ -13,6 +13,7 @@
 -   Removed (slightly) the developer’s own branding.
 -   A little change to how header is styled via CSS.
 -   `v257.1.1`: Improved and slightly distinct docs (on both NPM and GitHub)
+-   `v257.1.3`: Improved `exports` on package.json
 
 ### Fixed
 

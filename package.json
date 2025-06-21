@@ -1,6 +1,6 @@
 {
 	"name": "@mdrv/wbh",
-	"version": "257.1.2",
+	"version": "257.1.3",
 	"description": "Restrict access to your website from web browsers with(out) specific features.",
 	"keywords": ["browsers", "caniuse", "support", "target"],
 	"homepage": "https://github.com/mdrv/wbh",
@@ -16,8 +16,8 @@
 	"type": "module",
 	"exports": {
 		".": "./src/v257/index.ts",
-		"./mount": "./src/v257/mount.ts",
 		"./data": "./src/v257/data.ts",
+		"./mount": "./src/v257/mount.ts",
 		"./*/data": "./src/*/data.ts",
 		"./*/mount": "./src/*/mount.ts",
 		"./*": "./src/*/index.ts"
@@ -27,6 +27,35 @@
 		"b": "tsc && swc --strip-leading-paths ./src/v*/ -d ./dist/",
 		"g": "V=257 bun ./src/gen.ts"
 	},
+    "publishConfig": {
+        "access": "public",
+        "exports": {
+            ".": {
+                "default": "./dist/v257/index.js",
+                "types": "./dist/v257/index.d.ts"
+            },
+            "./data": {
+                "default": "./dist/v257/data.js",
+                "types": "./dist/v257/data.d.ts"
+            },
+            "./mount": {
+                "default": "./dist/v257/mount.js",
+                "types": "./dist/v257/mount.d.ts"
+            },
+            "./*/data": {
+                "default": "./dist/*/data.js",
+                "types": "./dist/*/data.d.ts"
+            },
+            "./*/mount": {
+                "default": "./dist/*/mount.js",
+                "types": "./dist/*/mount.d.ts"
+            },
+            "./*": {
+                "default": "./dist/*/index.js",
+                "types": "./dist/*/index.d.ts"
+            }
+        }
+    },
 	"devDependencies": {
 		"@mdn/browser-compat-data": "^6.0.25",
 		"@swc/cli": "^0.7.7",
