@@ -27,11 +27,10 @@ jobs:
           node-version: latest
           registry-url: 'https://registry.npmjs.org/'
           scope: '@mdrv'
-      - run: bun i
-      - run: bun b
+      - run: bun i # install
+      - run: bun g # generate
+      - run: bun b # build
       - run: npm publish --provenance --access public
         env:
           NPM_CONFIG_TOKEN: ${{secrets.NPM_TOKEN}}
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
-          NPM_TOKEN: ${{secrets.NPM_TOKEN}}
-          TOKEN: ${{secrets.NPM_TOKEN}}

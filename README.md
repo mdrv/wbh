@@ -5,6 +5,12 @@ Restrict access to your website from web browsers with(out) specific features.
 >   [!CAUTION]
 >   The API of this module is rapidly changing and is not intended for production use.
 
+## Features
+
+-   🎛️ Customizable (set level, score and wisdom as you like)
+-   🌲 Tree-shakeable (only import features you need)
+-   🚀 Easy to use (comes with error webpage mount function)
+
 ## Examples
 
 ```ts
@@ -45,4 +51,10 @@ const wbh = new WBH(
 )
 ```
 
-© 2025 Umar Alfarouk
+## Release Info
+
+This package uses Gregorian YYM-based versioning system (_ex. v257 = July 2025_).
+
+See [CHANGELOG](CHANGELOG.md) for (future) breaking changes and fixes.
+
+###### © 2025 Umar Alfarouk

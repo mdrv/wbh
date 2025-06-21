@@ -1,3 +1,4 @@
+export * from './data.ts'
 import type {
     FeatureMod,
     FeatureMap,

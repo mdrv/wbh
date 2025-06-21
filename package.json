@@ -1,13 +1,8 @@
 {
 	"name": "@mdrv/wbh",
-	"version": "257.0.2",
+	"version": "257.0.3",
 	"description": "Restrict access to your website from web browsers with(out) specific features.",
-	"keywords": [
-		"browsers",
-		"caniuse",
-		"support",
-		"target"
-	],
+	"keywords": ["browsers", "caniuse", "support", "target"],
 	"homepage": "https://github.com/mdrv/wbh",
 	"bugs": {
 		"url": "https://github.com/mdrv/wbh/issues"
@@ -20,31 +15,31 @@
 	"author": "Umar Alfarouk <medrivia@gmail.com> (https://alfarouk.id)",
 	"type": "module",
 	"exports": {
-		".": [
-			"./dist/v257/index.js",
-			"./src/v257/index.ts"
-		],
-		"./mount": [
-			"./dist/v257/mount.js",
-			"./src/v257/mount.ts"
-		],
-		"./data": [
-			"./dist/v257/data.js",
-			"./src/v257/data.ts"
-		]
+		".": {
+            "development": "./src/v257/index.ts",
+            "default": "./dist/v257/index.js"
+        },
+		"./mount": {
+            "development": "./src/v257/mount.ts",
+            "default": "./dist/v257/mount.js"
+        },
+		"./data": {
+            "development": "./src/v257/data.ts",
+            "default": "./dist/v257/data.js"
+        }
 	},
 	"main": "dist/v257/index.js",
-	"files": [
-		"dist"
-	],
+	"files": ["dist"],
 	"scripts": {
-		"b": "tsc && swc --strip-leading-paths ./src/v*/ -d ./dist/"
+		"b": "tsc && swc --strip-leading-paths ./src/v*/ -d ./dist/",
+		"g": "V=257 bun ./src/gen.ts"
 	},
 	"devDependencies": {
-		"@mdn/browser-compat-data": "^6.0.24",
+		"@mdn/browser-compat-data": "^6.0.25",
 		"@swc/cli": "^0.7.7",
 		"@swc/plugin-transform-imports": "^8.0.3",
-		"caniuse-db": "^1.0.30001723",
+		"caniuse-db": "^1.0.30001724",
+		"es-toolkit": "^1.39.3",
 		"is-mobile": "^5.0.0",
 		"redom": "^4.3.0",
 		"snarkdown": "^2.0.0"
