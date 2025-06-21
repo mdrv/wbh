@@ -1,7 +1,7 @@
 # 🔨 Web Browser Hard (WBH)
 
 <p align="center">
-  <img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/mdrv/wbh/release.yml"/>
+  <img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/mdrv/wbh/release.yml?event=release"/>
   <a href="https://www.npmjs.com/package/@mdrv/wbh">
     <img alt="Visit the NPM page" src="https://img.shields.io/npm/v/@mdrv/wbh"/>
   </a>
@@ -44,6 +44,7 @@ import {
   /*...*/
 } from '@mdrv/wbh'
 
+/* Initialize the main class */
 const wbh = new WBH(
   [
     {
@@ -70,11 +71,12 @@ const wbh = new WBH(
   { forceFail: false },
 )
 
+/* Fetch the result and act based on score */
 const target = document.getElementById('__app__')
-
 wbh.lastResultAsync.then((result) => {
   if (result.score >= 0) {
-    /* Mount your actual app here! */
+    /* Render your actual app here! */
+    /* mount(App, target) */
   } else {
     import('@mdrv/wbh/mount').then(({ mountError }) =>
       mountError(result, target, {
