@@ -18,10 +18,10 @@ export type GenericFeatureWithFn = GenericFeature &
 	) & {
 		data: {
             origin: 'mdn' | 'caniuse'
-			chrome: string | boolean
-			firefox: string | boolean
-			chrome_android: string | boolean
-			firefox_android: string | boolean
+			chrome: string | false
+			firefox: string | false
+			chrome_android: string | false
+			firefox_android: string | false
 			title?: string
 			description?: string
 			url?: string

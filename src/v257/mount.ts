@@ -36,10 +36,10 @@ const buildUrl = (obj: ReadonlyArray<string> | string) => {
 import { css } from './css.ts'
 import snarkdown from 'snarkdown'
 
-type MountOpts = Partial<{
+type MountOpts = {
     footerMd: string,
     headerEl: Element | string,
-}>
+}
 
 const defaultOpts: MountOpts = {
     footerMd: '[Powered by **@mdrv/wbh**](https://github.com/mdrv/wbh)',
@@ -53,7 +53,7 @@ const defaultOpts: MountOpts = {
  *
  * H: Take better styling from previous attempt: /x/b/m (with MV logo)
  */
-export const mountError = async (wbh: Result, root: HTMLDivElement, opts?: MountOpts): Promise<void> => {
+export const mountError = async (wbh: Result, root: HTMLDivElement, opts?: Partial<MountOpts>): Promise<void> => {
     const { headerEl, footerMd } = {...defaultOpts, ...opts}
     const div = document.createElement('div')
     div.classList.add('__wbh__')
