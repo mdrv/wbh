@@ -38,6 +38,7 @@ jobs:
           node-version: latest
           registry-url: 'https://registry.npmjs.org/'
           scope: '@mdrv'
+      - name: 'Publish to NPM: `@mdrv/wbh`'
       - run: npm publish --provenance --access public
         env:
           NPM_CONFIG_TOKEN: ${{secrets.NPM_TOKEN}}
@@ -45,8 +46,9 @@ jobs:
       - name: Sleep for 30 seconds (to prevent E409 Conflict)
         run: sleep 30s
         shell: bash
-      - name: 'Use `exports` from publishConfig'
-      - run: sed -i -r 's/"@mdrv\/wbh"/"wbh"/' package.json # shorter NPM alias: `wbh`
+      - name: 'Rename package with shorter alias: `wbh`'
+        run: sed -i -r 's/"@mdrv\/wbh"/"wbh"/' package.json
+      - name: 'Publish to NPM with shorter alias: `wbh`'
       - run: npm publish --provenance --access public
         env:
           NPM_CONFIG_TOKEN: ${{secrets.NPM_TOKEN}}
