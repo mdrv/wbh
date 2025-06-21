@@ -13,7 +13,7 @@ Restrict access to your website from web browsers with(out) specific features.
 >   [!CAUTION]
 >   The API of this module is **rapidly changing** and is not intended for production or commercial use.
 >
->   You can expect the next major version (`v260`) to be **much more stable**. 🌟
+>   To suit your needs, forking is (mostly) necessary. You can expect the next major version (`v260`) to be **more stable**. 🌟
 
 ## 🎁 Features
 
@@ -28,7 +28,7 @@ Restrict access to your website from web browsers with(out) specific features.
 ![Example screenshot (light mode, AVIF)](./res/example1-light.avif#gh-light-mode-only)
 
 >   [!NOTE]
->   If you can’t see the image, that means your browser does not support AVIF!
+>   If you can’t see the screenshot above, that means your browser does not support [AVIF image format](https://caniuse.com/avif)!
 
 ## 🧭 Examples
 
@@ -90,9 +90,9 @@ wbh.lastResultAsync.then((result) => {
 
 ## 🔔 Release Info
 
-This package uses (the author’s own term) **Gregorian YYM-based** version system.
+This package uses **Gregorian YYM-based** version system.
 
--   `v257`: (current) Released on/before July 2025. 📅
+-   `v257` **(latest)**: Released on/before July 2025. 📅
 -   `v260`: To be released on October–December 2025. 🚀
 
 See [CHANGELOG](CHANGELOG.md) for breaking changes, updates and fixes.
@@ -101,8 +101,8 @@ See [CHANGELOG](CHANGELOG.md) for breaking changes, updates and fixes.
 
 This project is proudly using these libraries:
 
--   🎨 [RE:DOM (the most versatile and lightweight DOM library/helpers I’ve ever used)](https://github.com/redom/redom)
--   📑 [Snarkdown (a very minimalist Markdown-to-HTML library)](https://github.com/developit/snarkdown)
--   📚 [MDN](https://github.com/mdn/browser-compat-data) and [Can I use...](https://github.com/Fyrd/caniuse) for additional data regarding browser support.
+-   🎨 [**RE:DOM**](https://github.com/redom/redom) (the most versatile yet lightweight DOM library)
+-   📑 [**Snarkdown**](https://github.com/developit/snarkdown) (a very minimalist Markdown-to-HTML library)
+-   📚 Additional data: [**MDN**](https://github.com/mdn/browser-compat-data) and [**Can I use...**](https://github.com/Fyrd/caniuse)
 
-###### © 2025 MEDRIVIA ／ Umar Alfarouk
+<h6 align="center">© 2025 MEDRIVIA ／ Umar Alfarouk</h6>
