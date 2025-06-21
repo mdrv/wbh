@@ -1,4 +1,5 @@
 export * from './data.ts'
+export { mountError } from './mount.ts'
 import type {
     FeatureMod,
     FeatureMap,

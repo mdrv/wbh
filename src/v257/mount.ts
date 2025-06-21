@@ -9,7 +9,6 @@ const withInnerHtml = <T extends Element>(el: T, innerHTML: string): T => {
 }
 
 export const svgPath = {
-    medrivia: '<path d="M 0,0 L 54,0 L 27,80 M 70,44 L 78,96 L 54,96 Z" />',
     /**
      * simple-icons:googlechrome
      */
@@ -26,6 +25,12 @@ export const svgPath = {
     mobile: '<path fill="currentColor" d="M12.75 0H2.25A2.25 2.25 0 0 0 0 2.25v19.5A2.25 2.25 0 0 0 2.25 24h10.5A2.25 2.25 0 0 0 15 21.75V2.25A2.25 2.25 0 0 0 12.75 0M7.5 22.5a1.498 1.498 0 1 1 .002-2.996A1.498 1.498 0 0 1 7.5 22.5h-.001z"/>'
 }
 
+export const defaultHeaderEl: { medrivia: Element } = {
+    medrivia: svg('svg', { viewBox: "0 0 78 96", fill: "#85e" }, svg('path',
+        { d: "M 0,0 L 54,0 L 27,80 M 70,44 L 78,96 L 54,96 Z" }
+    )),
+}
+
 const buildUrl = (obj: ReadonlyArray<string> | string) => {
     if (Array.isArray(obj)) {
         return 'https://caniuse.com/mdn-' + obj.join('_').toLowerCase()
@@ -37,12 +42,18 @@ const buildUrl = (obj: ReadonlyArray<string> | string) => {
 import { css } from './css.ts'
 import snarkdown from 'snarkdown'
 
+type MountOpts = Partial<{
+    footerMd: string,
+    headerEl: Element | string,
+}>
+
 /**
  * A simple error message showing list of unsupported features.
  *
  * H: Take better styling from previous attempt: /x/b/m (with MV logo)
  */
-export const mountError = async (wbh: Result, root: HTMLDivElement): Promise<void> => {
+export const mountError = async (wbh: Result, root: HTMLDivElement, opts: MountOpts): Promise<void> => {
+    const { footerMd = '[Powered by **@mdrv/wbh**](https://github.com/mdrv/wbh)', headerEl = defaultHeaderEl.medrivia } = opts
     const div = document.createElement('div')
     div.classList.add('__wbh__')
     div.style.opacity = '0'
@@ -59,17 +70,12 @@ export const mountError = async (wbh: Result, root: HTMLDivElement): Promise<voi
         el('style', css),
         svg('svg.DEFS', { width: '0', height: '0', style: 'display: none' }, [
             svg('defs', [
-                withInnerHtml(svg('symbol#medrivia'), svgPath.medrivia),
                 withInnerHtml(svg('symbol#chrome'), svgPath.chrome),
                 withInnerHtml(svg('symbol#firefox'), svgPath.firefox),
                 withInnerHtml(svg('symbol#mobile'), svgPath.mobile),
             ]),
         ]),
-        svg(
-            'svg.LOGO',
-            { viewBox: '0 0 78 96' },
-            svg('use', { href: '#medrivia' }),
-        ),
+        typeof headerEl === 'string' ? withInnerHtml(el('div.LOGO'), snarkdown(headerEl)) : el('div.LOGO', headerEl),
         el('p', [
             el('strong', 'Your browser is not supported.'),
             el('br'),
@@ -91,7 +97,7 @@ export const mountError = async (wbh: Result, root: HTMLDivElement): Promise<voi
             el('summary', 'List of features:'),
             el(
                 'div.ROOT',
-                wbh.unsupported.map((feature: Feature) =>
+                wbh.unsupported.toSorted((a, b) => (b.score || 0) - (a.score || 0)).map((feature: Feature) =>
                     el(
                         'div.FEATURE',
                         {
@@ -250,9 +256,8 @@ export const mountError = async (wbh: Result, root: HTMLDivElement): Promise<voi
                     ),
                 ),
             ),
-            // el('p.DISCLAIMER', '*Not fully applicable to forks and mobile browsers.'),
         ]),
-        el('h6', { style: { opacity: 0.3 } }, '© ' + new Date().getFullYear() + ' MEDRIVIA'),
+        withInnerHtml(el('h6.FOOTER', { style: { opacity: 0.3, "font-weight": "normal" } }), snarkdown(footerMd)),
     ])
     // H: Prevent font flashing
     // l: https://developer.mozilla.org/en-US/docs/Web/API/CSS_Font_Loading_API

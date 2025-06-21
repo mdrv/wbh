@@ -30,15 +30,6 @@ div.__wbh__ a.FIREFOX {
 	text-decoration: dotted underline #e808 1px;
     color: #e80;
 }
-svg.LOGO {
-    flex-shrink: 0;
-    padding-top: 10px;
-    width: 39px;
-    height: 48px;
-    margin: 0 auto;
-    opacity: 75%;
-    fill: #85e;
-}
 
 details {
     /* l: https://nerdy.dev/open-and-close-transitions-for-the-details-element */
@@ -127,6 +118,14 @@ div.ROOT {
 	align-items: stretch;
 	justify-content: center;
 	padding-top: 0.5rem;
+}
+
+div.LOGO {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+    max-height: 48px;
 }
 
 div.FEATURE {
@@ -276,6 +275,11 @@ div.FLEX {
             inset: -1rem;
         }
     }
+}
+
+h6.FOOTER > a {
+    color: hsl(from var(--color) h s calc(l - 30));
+    text-decoration: none;
 }
 
 p.DISCLAIMER {
