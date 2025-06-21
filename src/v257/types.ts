@@ -13,15 +13,15 @@ export type GenericFeature = {
 
 export type GenericFeatureWithFn = GenericFeature &
 	(
-		| { isAsync?: false | undefined; fn: () => boolean }
+		| { isAsync?: false; fn: () => boolean }
 		| { isAsync: true; fn: () => Promise<boolean> }
 	) & {
 		data: {
             origin: 'mdn' | 'caniuse'
-			chrome: string
-			firefox: string
-			chrome_android: string
-			firefox_android: string
+			chrome: string | boolean
+			firefox: string | boolean
+			chrome_android: string | boolean
+			firefox_android: string | boolean
 			title?: string
 			description?: string
 			url?: string

@@ -25,12 +25,6 @@ export const svgPath = {
     mobile: '<path fill="currentColor" d="M12.75 0H2.25A2.25 2.25 0 0 0 0 2.25v19.5A2.25 2.25 0 0 0 2.25 24h10.5A2.25 2.25 0 0 0 15 21.75V2.25A2.25 2.25 0 0 0 12.75 0M7.5 22.5a1.498 1.498 0 1 1 .002-2.996A1.498 1.498 0 0 1 7.5 22.5h-.001z"/>'
 }
 
-export const defaultHeaderEl: { medrivia: Element } = {
-    medrivia: svg('svg', { viewBox: "0 0 78 96", fill: "#85e" }, svg('path',
-        { d: "M 0,0 L 54,0 L 27,80 M 70,44 L 78,96 L 54,96 Z" }
-    )),
-}
-
 const buildUrl = (obj: ReadonlyArray<string> | string) => {
     if (Array.isArray(obj)) {
         return 'https://caniuse.com/mdn-' + obj.join('_').toLowerCase()
@@ -47,13 +41,20 @@ type MountOpts = Partial<{
     headerEl: Element | string,
 }>
 
+const defaultOpts: MountOpts = {
+    footerMd: '[Powered by **@mdrv/wbh**](https://github.com/mdrv/wbh)',
+    headerEl: svg('svg', { viewBox: "0 0 78 96", fill: "#85e" }, svg('path',
+        { d: "M 0,0 L 54,0 L 27,80 M 70,44 L 78,96 L 54,96 Z" }
+    ))
+}
+
 /**
  * A simple error message showing list of unsupported features.
  *
  * H: Take better styling from previous attempt: /x/b/m (with MV logo)
  */
-export const mountError = async (wbh: Result, root: HTMLDivElement, opts: MountOpts): Promise<void> => {
-    const { footerMd = '[Powered by **@mdrv/wbh**](https://github.com/mdrv/wbh)', headerEl = defaultHeaderEl.medrivia } = opts
+export const mountError = async (wbh: Result, root: HTMLDivElement, opts?: MountOpts): Promise<void> => {
+    const { headerEl, footerMd } = {...defaultOpts, ...opts}
     const div = document.createElement('div')
     div.classList.add('__wbh__')
     div.style.opacity = '0'
