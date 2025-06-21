@@ -31,11 +31,15 @@ jobs:
       - run: bun g # generate
       - run: bun b # build
       - run: sed -i -r '/^>\s+\[!\w+\]/d' ./README.md
+      - run: sed -i -r 's/src(\/\S+\.)ts"/dist\1js"/g' package.json
       - run: npm publish --provenance --access public
         env:
           NPM_CONFIG_TOKEN: ${{secrets.NPM_TOKEN}}
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
-      - run: sed -i 's/"@mdrv\/wbh"/"wbh"/' ./package.json
+      - name: Sleep for 30 seconds
+        run: sleep 30s
+        shell: bash
+      - run: sed -i -r 's/"@mdrv\/wbh"/"wbh"/' package.json
       - run: npm publish --provenance --access public
         env:
           NPM_CONFIG_TOKEN: ${{secrets.NPM_TOKEN}}

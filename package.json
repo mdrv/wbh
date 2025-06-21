@@ -1,6 +1,6 @@
 {
 	"name": "@mdrv/wbh",
-	"version": "257.1.1",
+	"version": "257.1.2",
 	"description": "Restrict access to your website from web browsers with(out) specific features.",
 	"keywords": ["browsers", "caniuse", "support", "target"],
 	"homepage": "https://github.com/mdrv/wbh",
@@ -15,32 +15,13 @@
 	"author": "Umar Alfarouk <medrivia@gmail.com> (https://alfarouk.id)",
 	"type": "module",
 	"exports": {
-		".": {
-			"development": "./src/v257/index.ts",
-			"default": "./dist/v257/index.js"
-		},
-		"./mount": {
-			"development": "./src/v257/mount.ts",
-			"default": "./dist/v257/mount.js"
-		},
-		"./data": {
-			"development": "./src/v257/data.ts",
-			"default": "./dist/v257/data.js"
-		},
-		"./*/data": {
-			"development": "./src/*/data.ts",
-			"default": "./dist/*/data.js"
-		},
-		"./*/mount": {
-			"development": "./src/*/mount.ts",
-			"default": "./dist/*/mount.js"
-		},
-		"./*": {
-			"development": "./src/*/index.ts",
-			"default": "./dist/*/index.js"
-		}
+		".": "./src/v257/index.ts",
+		"./mount": "./src/v257/mount.ts",
+		"./data": "./src/v257/data.ts",
+		"./*/data": "./src/*/data.ts",
+		"./*/mount": "./src/*/mount.ts",
+		"./*": "./src/*/index.ts"
 	},
-	"main": "dist/v257/index.js",
 	"files": ["dist"],
 	"scripts": {
 		"b": "tsc && swc --strip-leading-paths ./src/v*/ -d ./dist/",
