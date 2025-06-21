@@ -20,6 +20,7 @@
 -   You can import `mountError` directly from `@mdrv/wbh`
 -   Enforce version to use on your project via import from `@mdrv/wbh/v257`
     -   💡 The next version `v260` might break the API, so you can keep the previous one.
+-   `v257.1.6`: TypeScript when checking feature data (typo)
 
 ### Known Bugs
 

@@ -2,7 +2,7 @@
 	"name": "@mdrv/wbh",
 	"version": "257.1.6",
 	"description": "Restrict access to your website from web browsers with(out) specific features.",
-	"keywords": ["browsers", "caniuse", "support", "target"],
+	"keywords": ["browsers", "caniuse", "support", "target", "wbh"],
 	"homepage": "https://github.com/mdrv/wbh",
 	"bugs": {
 		"url": "https://github.com/mdrv/wbh/issues"

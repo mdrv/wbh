@@ -13,14 +13,14 @@ Restrict access to your website from web browsers with(out) specific features.
 >   [!CAUTION]
 >   The API of this module is **rapidly changing** and is not intended for production or commercial use.
 >
->   To suit your needs, forking is (mostly) necessary. You can expect the next major version (`v260`) to be **more stable**. 🌟
+>   To suit your specific needs, it’s necessary to fork this project. You can expect the next major version (`v260`) to be **more stable**. 🌟
 
 ## 🎁 Features
 
--   📊 Pick from [50+ browser features](https://github.com/mdrv/wbh/wiki/feature-list) (more coming soon...)
--   🎛️ Customizable (set level, score and wisdom as you like)
--   🌲 Tree-shakeable (only import features you need)
--   🚀 Easy to use: comes with `mountError` function
+-   📊 **Versatile**: Pick from [50+ browser features](https://github.com/mdrv/wbh/wiki/feature-list) to get checked
+-   🎛️ **Customizable**: Set metadata, header and footer as you like
+-   🌲 **Tree-shakeable**: Unused imports stay out of bundle
+-   🚀 **Easy to use**: Comes with TypeScript and `mountError` function
 
 ## 📷 Screenshot
 
@@ -90,10 +90,18 @@ wbh.lastResultAsync.then((result) => {
 
 ## 🔔 Release Info
 
-This package uses **Gregorian YYM-based** version system.
+This package implements **Gregorian YYM-based** semver notation.
 
--   📅 `v257` **(latest)**: Released on/before July 2025.
--   🚀 `v260`: To be released on October–December 2025.
+-   📅 `v257.x.x`: Released around/on July 2025. **(current)**
+-   🚀 `v260.x.x`: Released from October to December 2025.
+
+For every major release, the preceeding version will need to be imported with subpath: 
+
+```ts
+/* Example: v260.x.x */
+import { WBH as WBHv260 } from '@mdrv/wbh' // v260 (current)
+import { WBH } from '@mdrv/wbh/v257' // v257 (previous)
+```
 
 See [CHANGELOG](CHANGELOG.md) for breaking changes, updates and fixes.
 
@@ -103,6 +111,8 @@ This project is proudly using these libraries:
 
 -   🎨 [**RE:DOM**](https://github.com/redom/redom) (the most versatile yet lightweight DOM library)
 -   📑 [**Snarkdown**](https://github.com/developit/snarkdown) (a very minimalist Markdown-to-HTML library)
+-   🧩 [**es-toolkit**](https://github.com/toss/es-toolkit) (modern JS utilities with TypeScript support)
+-   🥟 [**Bun.js**](https://github.com/oven-sh/bun) (blazing fast server-side JS runtime)
 -   📚 Additional data: [**MDN**](https://github.com/mdn/browser-compat-data) and [**Can I use...**](https://github.com/Fyrd/caniuse)
 
 <h6 align="center">© 2025 MEDRIVIA ／ Umar Alfarouk</h6>
