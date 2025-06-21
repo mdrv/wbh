@@ -30,7 +30,7 @@ jobs:
       - name: 'Use `exports` from publishConfig'
         run: |
           jq \
-            ".exports = .publishConfig.exports | del(.publishConfig.exports)" \
+            "reduce .publishConfig as $in (.; . + $in) | del(.publishConfig)" \
             package.json > package.json~
           mv package.json~ package.json
       - uses: actions/setup-node@v4

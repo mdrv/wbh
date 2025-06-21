@@ -1,6 +1,6 @@
 {
 	"name": "@mdrv/wbh",
-	"version": "257.1.4",
+	"version": "257.1.5",
 	"description": "Restrict access to your website from web browsers with(out) specific features.",
 	"keywords": ["browsers", "caniuse", "support", "target"],
 	"homepage": "https://github.com/mdrv/wbh",
@@ -28,7 +28,8 @@
 		"g": "V=257 bun ./src/gen.ts"
 	},
     "publishConfig": {
-        "access": "public",
+        "main": "./dist/v257/index.js",
+        "types": "./dist/v257/index.d.ts",
         "exports": {
             ".": {
                 "default": "./dist/v257/index.js",
