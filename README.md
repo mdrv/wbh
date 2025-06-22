@@ -9,8 +9,11 @@
 </p>
 
 <p align="center">
-    <img src="res/logo.svg" width="180" height="180" /><br/>
-    <em>Restrict access to your website from web browsers without specific features.</em>
+    <img src="res/logo.svg" width="190" height="190" /><br/>
+</p>
+
+<p align="center">
+    <b><i>Restrict access to your website from web browsers without specific features.</i></b>
 </p>
 
 >   [!CAUTION]
