@@ -17,7 +17,7 @@ Restrict access to your website from web browsers without specific features.
 
 ## 🎁 Features
 
--   🧬 **Modular**: YOu can use it on any framework (Svelte, Vue, etc.)
+-   🧬 **Modular**: You can use it on any framework (Svelte, Vue, etc.)
 -   📊 **Versatile**: Pick from [50+ browser features](https://github.com/mdrv/wbh/wiki/feature-list) to get checked
 -   🎛️ **Customizable**: Set metadata, header and footer as you like
 -   🌲 **Tree-shakeable**: Unused imports stay out of bundle
@@ -121,4 +121,4 @@ This project is proudly using these libraries:
 -   🥟 [**Bun.js**](https://github.com/oven-sh/bun) (blazing fast server-side JS runtime)
 -   📚 Additional data: [**MDN**](https://github.com/mdn/browser-compat-data) and [**Can I use...**](https://github.com/Fyrd/caniuse)
 
-<p align="center"><small>© 2025 MEDRIVIA ／ Umar Alfarouk</small></p>
+<p align="center"><sub><strong>© 2025 MEDRIVIA ／ Umar Alfarouk</strong></sub></p>
