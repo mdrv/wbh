@@ -8,7 +8,10 @@
     <img alt="GitHub License" src="https://img.shields.io/github/license/mdrv/wbh">
 </p>
 
-Restrict access to your website from web browsers without specific features.
+<p align="center">
+    <img src="res/logo.svg" width="180" height="180" /><br/>
+    <em>Restrict access to your website from web browsers without specific features.</em>
+</p>
 
 >   [!CAUTION]
 >   The API of this module is **rapidly changing** and is not intended for production or commercial use.
