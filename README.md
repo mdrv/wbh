@@ -8,12 +8,12 @@
     <img alt="GitHub License" src="https://img.shields.io/github/license/mdrv/wbh">
 </p>
 
-Restrict access to your website from web browsers with(out) specific features.
+Restrict access to your website from web browsers without specific features.
 
 >   [!CAUTION]
 >   The API of this module is **rapidly changing** and is not intended for production or commercial use.
 >
->   To suit your specific needs, it’s necessary to fork this project. You can expect the next major version (`v260`) to be **more stable**. 🌟
+>   To suit your specific needs, it’s necessary to fork this project (with attribution). You can expect the next major version (`v260`) to be **more stable**. 🌟
 
 ## 🎁 Features
 
@@ -21,6 +21,8 @@ Restrict access to your website from web browsers with(out) specific features.
 -   🎛️ **Customizable**: Set metadata, header and footer as you like
 -   🌲 **Tree-shakeable**: Unused imports stay out of bundle
 -   🚀 **Easy to use**: Comes with TypeScript and `mountError` function
+
+Any question? You can first read [Q&A](https://github.com/mdrv/wbh/wiki/Q&A) on the wiki.
 
 ## 📷 Screenshot
 
@@ -73,6 +75,7 @@ const wbh = new WBH(
 
 /* Fetch the result and act based on score */
 const target = document.getElementById('__app__')
+/* Synchronous version (WBH.lastResult) will bypass async feature check */
 wbh.lastResultAsync.then((result) => {
   if (result.score >= 0) {
     /* Render your actual app here! */
@@ -81,7 +84,7 @@ wbh.lastResultAsync.then((result) => {
     import('@mdrv/wbh/mount').then(({ mountError }) =>
       mountError(result, target, {
         /* You can customize header with DOM element/Markdown */
-        headerEl: 'Oops! :(',
+        headerEl: '# Oops! :(',
         /* You can customize footer with Markdown */
         footerMd: '[Powered by **@mdrv/wbh**](https://github.com/mdrv/wbh)',
       })
@@ -117,4 +120,4 @@ This project is proudly using these libraries:
 -   🥟 [**Bun.js**](https://github.com/oven-sh/bun) (blazing fast server-side JS runtime)
 -   📚 Additional data: [**MDN**](https://github.com/mdn/browser-compat-data) and [**Can I use...**](https://github.com/Fyrd/caniuse)
 
-<h6 align="center">© 2025 MEDRIVIA ／ Umar Alfarouk</h6>
+<p align="center" style="opacity: 0.5, font-weight: 700">© 2025 MEDRIVIA ／ Umar Alfarouk</p>
