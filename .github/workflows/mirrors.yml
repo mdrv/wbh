@@ -1,6 +1,6 @@
 name: Mirrors
 
-on: [push workflow_dispatch]
+on: [push, workflow_dispatch]
 
 jobs:
   steps:
