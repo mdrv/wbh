@@ -16,6 +16,7 @@ jobs:
           REMOTE: 'https://gitlab.com/mdrv/wbh.git'
           GIT_USERNAME: mdrv
           GIT_PASSWORD: ${{ secrets.GITLAB_TOKEN }}
+          PUSH_ALL_REFS: false
       - uses: yesolutions/mirror-action@master
         with:
           REMOTE: 'https://codeberg.org/mdrv/wbh.git'
