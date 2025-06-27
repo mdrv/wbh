@@ -3,17 +3,21 @@ name: Mirrors
 on: [push, workflow_dispatch]
 
 jobs:
-  steps:
-    - uses: actions/checkout@v3
-      with:
-        fetch-depth: 0
-    - uses: yesolutions/mirror-action@master
-      with:
-        REMOTE: 'https://gitlab.com/mdrv/wbh.git'
-        GIT_USERNAME: mdrv
-        GIT_PASSWORD: ${{ secrets.GITLAB_TOKEN }}
-    - uses: yesolutions/mirror-action@master
-      with:
-        REMOTE: 'https://codeberg.org/mdrv/wbh.git'
-        GIT_USERNAME: mdrv
-        GIT_PASSWORD: ${{ secrets.CODEBERG_TOKEN }}
+  mirrors:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - uses: yesolutions/mirror-action@master
+        with:
+          REMOTE: 'https://gitlab.com/mdrv/wbh.git'
+          GIT_USERNAME: mdrv
+          GIT_PASSWORD: ${{ secrets.GITLAB_TOKEN }}
+      - uses: yesolutions/mirror-action@master
+        with:
+          REMOTE: 'https://codeberg.org/mdrv/wbh.git'
+          GIT_USERNAME: mdrv
+          GIT_PASSWORD: ${{ secrets.CODEBERG_TOKEN }}
