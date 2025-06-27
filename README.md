@@ -1,15 +1,19 @@
 # 🔨 Web Browser Hard (WBH)
 
 <p align="center">
-  <img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/mdrv/wbh/release.yml?event=release"/>
-  <a href="https://www.npmjs.com/package/@mdrv/wbh">
-    <img alt="Visit the NPM page" src="https://img.shields.io/npm/v/@mdrv/wbh"/>
-  </a>
-    <img alt="GitHub License" src="https://img.shields.io/github/license/mdrv/wbh">
+    <img src="res/logo.svg" width="180" height="180" /><br/>
 </p>
 
 <p align="center">
-    <img src="res/logo.svg" width="190" height="190" /><br/>
+    <a href="https://github.com/mdrv/wbh/actions/workflows/release.yml">
+        <img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/mdrv/wbh/release.yml?event=release"/>
+    </a>
+    <a href="https://www.npmjs.com/package/@mdrv/wbh">
+        <img alt="Visit the NPM page" src="https://img.shields.io/npm/v/@mdrv/wbh"/>
+    </a>
+    <a href="https://github.com/mdrv/wbh/blob/master/LICENSE">
+        <img alt="GitHub License" src="https://img.shields.io/github/license/mdrv/wbh">
+    </a>
 </p>
 
 <p align="center">
@@ -115,7 +119,7 @@ import { WBH as WBHv260 } from '@mdrv/wbh' // v260 (current)
 import { WBH } from '@mdrv/wbh/v257' // v257 (previous)
 ```
 
-See [CHANGELOG](CHANGELOG.md) for breaking changes, updates and fixes.
+See [CHANGELOG](https://github.com/mdrv/wbh/wiki/changelog) for breaking changes, updates and fixes.
 
 ## 💖 Thank You
 
