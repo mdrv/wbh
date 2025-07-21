@@ -48,7 +48,7 @@ jobs:
   npm-release:
     if: ${{ github.event_name == 'release' || inputs.npm }}
     env:
-      TAG: ${{ (github.event.release.prerelease || (inputs.tag == "next")) && "next" || "latest" }}
+      TAG: ${{ github.event.release.prerelease || (inputs.tag == 'next') && 'next' || 'latest' }}
     runs-on: ubuntu-latest
     permissions:
       contents: read
