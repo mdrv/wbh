@@ -7,7 +7,7 @@
  * l: https://caniuse.com/arrow-functions
  */
 export const arrowFunction = {
-    data: {"origin":"caniuse","title":"Arrow functions","description":"Function shorthand using `=>` syntax and lexical `this` binding.","chrome":"45","chrome_android":"137","firefox":"22","firefox_android":"139","url":"https://caniuse.com/arrow-functions"},
+    data: {"origin":"caniuse","title":"Arrow functions","description":"Function shorthand using `=>` syntax and lexical `this` binding.","chrome":"45","chrome_android":"138","firefox":"22","firefox_android":"140","url":"https://caniuse.com/arrow-functions"},
 	key: 'arrowFunction',
 	name: 'Arrow functions',
 	caniuse: 'arrow-functions',
@@ -30,7 +30,7 @@ export const arrowFunction = {
  * l: https://caniuse.com/es6-module-dynamic-import
  */
 export const dynamicImport = {
-    data: {"origin":"caniuse","title":"JavaScript modules: dynamic import()","description":"Loading JavaScript modules dynamically using the import() syntax","chrome":"63","chrome_android":"137","firefox":"67","firefox_android":"139","url":"https://caniuse.com/es6-module-dynamic-import"},
+    data: {"origin":"caniuse","title":"JavaScript modules: dynamic import()","description":"Loading JavaScript modules dynamically using the import() syntax","chrome":"63","chrome_android":"138","firefox":"67","firefox_android":"140","url":"https://caniuse.com/es6-module-dynamic-import"},
 	key: 'dynamicImport',
 	name: 'Dynamic imports',
 	caniuse: 'es6-module-dynamic-import',
@@ -64,7 +64,7 @@ export const userAgent = {
  * l: https://caniuse.com/mdn-api_indexeddb
  */
 export const indexedDb = {
-    data: {"origin":"caniuse","title":"IndexedDB 2.0","description":"Improvements to Indexed DB, including getAll(), renaming stores and indexes, and binary keys.","chrome":"58","chrome_android":"137","firefox":"51","firefox_android":"139","url":"https://caniuse.com/indexeddb2"},
+    data: {"origin":"caniuse","title":"IndexedDB 2.0","description":"Improvements to Indexed DB, including getAll(), renaming stores and indexes, and binary keys.","chrome":"58","chrome_android":"138","firefox":"51","firefox_android":"140","url":"https://caniuse.com/indexeddb2"},
 	key: 'indexedDb',
 	name: 'IndexedDB API',
 	caniuse: 'indexeddb2',
@@ -98,7 +98,7 @@ export const fileSystemApi = {
  * l: https://caniuse.com/custom-elementsv1
  */
 export const customElements = {
-    data: {"origin":"caniuse","title":"Custom Elements (V1)","description":"One of the key features of the Web Components system, custom elements allow new HTML tags to be defined.","chrome":"67","chrome_android":"137","firefox":"63","firefox_android":"139","url":"https://caniuse.com/custom-elementsv1"},
+    data: {"origin":"caniuse","title":"Custom Elements (V1)","description":"One of the key features of the Web Components system, custom elements allow new HTML tags to be defined.","chrome":"67","chrome_android":"138","firefox":"63","firefox_android":"140","url":"https://caniuse.com/custom-elementsv1"},
 	key: 'customElements',
 	name: 'Custom Elements',
 	caniuse: 'custom-elementsv1',
@@ -142,7 +142,7 @@ export const cssDetailsContent = {
  * Very standard by 2025
  */
 export const cssMathFunctions = {
-    data: {"origin":"caniuse","title":"CSS math functions min(), max() and clamp()","description":"More advanced mathematical expressions in addition to `calc()`","chrome":"79","chrome_android":"137","firefox":"75","firefox_android":"139","url":"https://caniuse.com/css-math-functions"},
+    data: {"origin":"caniuse","title":"CSS math functions min(), max() and clamp()","description":"More advanced mathematical expressions in addition to `calc()`","chrome":"79","chrome_android":"138","firefox":"75","firefox_android":"140","url":"https://caniuse.com/css-math-functions"},
 	key: 'cssMathFunctions',
 	name: 'CSS math functions',
 	caniuse: 'css-math-functions',
@@ -159,7 +159,7 @@ export const cssMathFunctions = {
  * H: Kiwi Browser won’t render __pseudo-dialog box-shadow, but it works in other websites???
  */
 export const cssBoxShadow = {
-    data: {"origin":"caniuse","title":"CSS3 Box-shadow","description":"Method of displaying an inner or outer shadow effect to elements","chrome":"10","chrome_android":"137","firefox":"4","firefox_android":"139","url":"https://caniuse.com/css-boxshadow"},
+    data: {"origin":"caniuse","title":"CSS3 Box-shadow","description":"Method of displaying an inner or outer shadow effect to elements","chrome":"10","chrome_android":"138","firefox":"4","firefox_android":"140","url":"https://caniuse.com/css-boxshadow"},
 	key: 'cssBoxShadow',
 	name: 'CSS box-shadow',
 	caniuse: 'css-boxshadow',
@@ -171,7 +171,7 @@ export const cssBoxShadow = {
 /**
  */
 export const cssGrid = {
-    data: {"origin":"caniuse","title":"CSS Grid Layout (level 1)","description":"Method of using a grid concept to lay out content, providing a mechanism for authors to divide available space for layout into columns and rows using a set of predictable sizing behaviors. Includes support for all `grid-*` properties and the `fr` unit.","chrome":"58","chrome_android":"137","firefox":"54","firefox_android":"139","url":"https://caniuse.com/css-grid"},
+    data: {"origin":"caniuse","title":"CSS Grid Layout (level 1)","description":"Method of using a grid concept to lay out content, providing a mechanism for authors to divide available space for layout into columns and rows using a set of predictable sizing behaviors. Includes support for all `grid-*` properties and the `fr` unit.","chrome":"58","chrome_android":"138","firefox":"54","firefox_android":"140","url":"https://caniuse.com/css-grid"},
 	key: 'cssGrid',
 	name: 'CSS grid',
 	caniuse: 'css-grid',
@@ -214,7 +214,7 @@ export const cssContainerType = {
  * l: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout/Subgrid
  */
 export const cssSubgrid = {
-    data: {"origin":"caniuse","title":"CSS Subgrid","description":"Feature of the CSS Grid Layout Module Level 2 that allows a grid-item with its own grid to align in one or both dimensions with its parent grid.","chrome":"117","chrome_android":"137","firefox":"71","firefox_android":"139","url":"https://caniuse.com/css-subgrid"},
+    data: {"origin":"caniuse","title":"CSS Subgrid","description":"Feature of the CSS Grid Layout Module Level 2 that allows a grid-item with its own grid to align in one or both dimensions with its parent grid.","chrome":"117","chrome_android":"138","firefox":"71","firefox_android":"140","url":"https://caniuse.com/css-subgrid"},
 	key: 'cssSubgrid',
 	name: 'CSS subgrid',
 	caniuse: 'css-subgrid',
@@ -352,7 +352,7 @@ export const cssScrollbarColor = {
  * l: https://developer.mozilla.org/en-US/docs/Web/CSS/touch-action
  */
 export const cssTouchAction = {
-    data: {"origin":"caniuse","title":"CSS touch-action property","description":"touch-action is a CSS property that controls filtering of gesture events, providing developers with a declarative mechanism to selectively disable touch scrolling (in one or both axes) or double-tap-zooming.","chrome":"36","chrome_android":"137","firefox":"57","firefox_android":"139","url":"https://caniuse.com/css-touch-action"},
+    data: {"origin":"caniuse","title":"CSS touch-action property","description":"touch-action is a CSS property that controls filtering of gesture events, providing developers with a declarative mechanism to selectively disable touch scrolling (in one or both axes) or double-tap-zooming.","chrome":"36","chrome_android":"138","firefox":"57","firefox_android":"140","url":"https://caniuse.com/css-touch-action"},
 	key: 'cssTouchAction',
 	name: 'CSS touch-action',
 	caniuse: 'css-touch-action',
@@ -391,7 +391,7 @@ export const cssZIndex = {
  * H: JUST RELEASED: Firefox 126 (Released 2024-05-14)
  */
 export const cssZoom = {
-    data: {"origin":"caniuse","title":"CSS zoom","description":"Method of scaling content while also affecting layout.","chrome":"4","chrome_android":"137","firefox":"126","firefox_android":"139","url":"https://caniuse.com/css-zoom"},
+    data: {"origin":"caniuse","title":"CSS zoom","description":"Method of scaling content while also affecting layout.","chrome":"4","chrome_android":"138","firefox":"126","firefox_android":"140","url":"https://caniuse.com/css-zoom"},
 	key: 'cssZoom',
 	name: 'CSS zoom',
 	caniuse: 'css-zoom',
@@ -464,7 +464,7 @@ export const cssConicGradient = {
  * l: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_colors/Relative_colors
  */
 export const cssRelativeColors = {
-    data: {"origin":"caniuse","title":"CSS Relative color syntax","description":"Relative color syntax in CSS allows a color to be defined relative to another color using the `from` keyword and optionally `calc()` for any of the color values.","chrome":"131","chrome_android":"137","firefox":"133","firefox_android":false,"url":"https://caniuse.com/css-relative-colors"},
+    data: {"origin":"caniuse","title":"CSS Relative color syntax","description":"Relative color syntax in CSS allows a color to be defined relative to another color using the `from` keyword and optionally `calc()` for any of the color values.","chrome":"131","chrome_android":"138","firefox":"133","firefox_android":false,"url":"https://caniuse.com/css-relative-colors"},
 	key: 'cssRelativeColors',
 	name: 'CSS relative colors',
 	caniuse: 'css-relative-colors',
@@ -481,16 +481,16 @@ export const cssOklch = {
 	key: 'cssOklch',
 	name: 'CSS oklch()',
 	caniuse: ['css', 'types', 'color', 'oklch'],
-    fn: (): boolean => {
-        return CSS.supports('color', 'oklch(59.69% 0.156 49.77 / .5)')
-    },
+	fn: (): boolean => {
+		return CSS.supports('color', 'oklch(59.69% 0.156 49.77 / .5)')
+	},
 } as const
 
 /**
  * l: https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API
  */
 export const webAnimations = {
-    data: {"origin":"caniuse","title":"Web Animations API","description":"Lets you create animations that are run in the browser, as well as inspect and manipulate animations created through declarative means like CSS.","chrome":"84","chrome_android":"137","firefox":"81","firefox_android":"139","url":"https://caniuse.com/web-animation"},
+    data: {"origin":"caniuse","title":"Web Animations API","description":"Lets you create animations that are run in the browser, as well as inspect and manipulate animations created through declarative means like CSS.","chrome":"84","chrome_android":"138","firefox":"81","firefox_android":"140","url":"https://caniuse.com/web-animation"},
 	key: 'webAnimations',
 	name: 'Web Animations API',
 	caniuse: 'web-animation',
@@ -511,7 +511,7 @@ export const webAnimations = {
  * l: https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserver
  */
 export const resizeObserver = {
-    data: {"origin":"caniuse","title":"Resize Observer","description":"Method for observing and reacting to changes to sizes of DOM elements.","chrome":"64","chrome_android":"137","firefox":"69","firefox_android":"139","url":"https://caniuse.com/resizeobserver"},
+    data: {"origin":"caniuse","title":"Resize Observer","description":"Method for observing and reacting to changes to sizes of DOM elements.","chrome":"64","chrome_android":"138","firefox":"69","firefox_android":"140","url":"https://caniuse.com/resizeobserver"},
 	key: 'resizeObserver',
 	name: 'Resize Observer API',
 	caniuse: 'resizeobserver',
@@ -531,7 +531,7 @@ export const resizeObserver = {
  * l: https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API
  */
 export const webSockets = {
-    data: {"origin":"caniuse","title":"Web Sockets","description":"Bidirectional communication technology for web apps","chrome":"16","chrome_android":"137","firefox":"11","firefox_android":"139","url":"https://caniuse.com/websockets"},
+    data: {"origin":"caniuse","title":"Web Sockets","description":"Bidirectional communication technology for web apps","chrome":"16","chrome_android":"138","firefox":"11","firefox_android":"140","url":"https://caniuse.com/websockets"},
 	key: 'webSockets',
 	name: 'WebSocket API',
 	caniuse: 'websockets',
@@ -650,7 +650,7 @@ export const paymentRequestApi = {
  * l: https://developer.mozilla.org/en-US/docs/Web/CSS/content-visibility
  */
 export const cssContentVisibility = {
-    data: {"origin":"caniuse","title":"CSS content-visibility","description":"Provides control over when elements are rendered, so rendering can be skipped for elements not yet in the user's viewport. ","chrome":"85","chrome_android":"137","firefox":"125","firefox_android":"139","url":"https://caniuse.com/css-content-visibility"},
+    data: {"origin":"caniuse","title":"CSS content-visibility","description":"Provides control over when elements are rendered, so rendering can be skipped for elements not yet in the user's viewport. ","chrome":"85","chrome_android":"138","firefox":"125","firefox_android":"140","url":"https://caniuse.com/css-content-visibility"},
 	key: 'cssContentVisibility',
 	name: 'CSS content-visibility',
 	caniuse: 'css-content-visibility',
@@ -706,7 +706,7 @@ export const cssCalcSize = {
  * l: https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter
  */
 export const cssBackdropFilter = {
-    data: {"origin":"caniuse","title":"CSS Backdrop Filter","description":"Method of applying filter effects (like blur, grayscale or hue) to content/elements below the target element.","chrome":"76","chrome_android":"137","firefox":"103","firefox_android":"139","url":"https://caniuse.com/css-backdrop-filter"},
+    data: {"origin":"caniuse","title":"CSS Backdrop Filter","description":"Method of applying filter effects (like blur, grayscale or hue) to content/elements below the target element.","chrome":"76","chrome_android":"138","firefox":"103","firefox_android":"140","url":"https://caniuse.com/css-backdrop-filter"},
 	key: 'cssBackdropFilter',
 	name: 'CSS backdrop-filter',
 	caniuse: 'css-backdrop-filter',
@@ -822,7 +822,7 @@ export const justifyContentSafe = {
 		'flex_context',
 		'safe_unsafe',
 	],
-    url: 'https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content#safe',
+	url: 'https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content#safe',
 	fn: (): boolean => {
 		return CSS.supports('justify-content', 'safe center')
 	},
@@ -853,7 +853,7 @@ export const jpegxl = {
 } as const
 
 export const avif = {
-    data: {"origin":"caniuse","title":"AVIF image format","description":"A modern image format based on the [AV1 video format](/av1). AVIF generally has better compression than [WebP](/webp), JPEG, PNG and GIF and is designed to supersede them. AVIF competes with [JPEG XL](/jpegxl) which has similar compression quality and is generally seen as more feature-rich than AVIF.","chrome":"85","chrome_android":"137","firefox":"113","firefox_android":"139","url":"https://caniuse.com/avif"},
+    data: {"origin":"caniuse","title":"AVIF image format","description":"A modern image format based on the [AV1 video format](/av1). AVIF generally has better compression than [WebP](/webp), JPEG, PNG and GIF and is designed to supersede them. AVIF competes with [JPEG XL](/jpegxl) which has similar compression quality and is generally seen as more feature-rich than AVIF.","chrome":"85","chrome_android":"138","firefox":"113","firefox_android":"140","url":"https://caniuse.com/avif"},
 	key: 'avif',
 	name: 'AVIF image format',
 	caniuse: 'avif',

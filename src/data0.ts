@@ -448,9 +448,9 @@ export const cssOklch = {
 	key: 'cssOklch',
 	name: 'CSS oklch()',
 	caniuse: ['css', 'types', 'color', 'oklch'],
-    fn: (): boolean => {
-        return CSS.supports('color', 'oklch(59.69% 0.156 49.77 / .5)')
-    },
+	fn: (): boolean => {
+		return CSS.supports('color', 'oklch(59.69% 0.156 49.77 / .5)')
+	},
 } as const
 
 /**
@@ -769,7 +769,7 @@ export const justifyContentSafe = {
 		'flex_context',
 		'safe_unsafe',
 	],
-    url: 'https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content#safe',
+	url: 'https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content#safe',
 	fn: (): boolean => {
 		return CSS.supports('justify-content', 'safe center')
 	},

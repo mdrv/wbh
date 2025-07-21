@@ -6,9 +6,9 @@ export type GenericFeature = {
 	name: string
 	caniuse: string | ReadonlyArray<string>
 	level?: number
-    score?: number
+	score?: number
 	wisdom?: string
-    url?: string
+	url?: string
 }
 
 export type GenericFeatureWithFn = GenericFeature &
@@ -17,7 +17,7 @@ export type GenericFeatureWithFn = GenericFeature &
 		| { isAsync: true; fn: () => Promise<boolean> }
 	) & {
 		data: {
-            origin: 'mdn' | 'caniuse'
+			origin: 'mdn' | 'caniuse'
 			chrome: string | false
 			firefox: string | false
 			chrome_android: string | false
@@ -42,8 +42,7 @@ type FeatureWithOpts = {
 type FeatureOpts = Omit<FeatureWithOpts, 'feat'>
 
 export type FeatureMod = Array<
-	| FeatureWithOpts
-	| [GenericFeatureWithFn, WBHLevel | FeatureOpts]
+	FeatureWithOpts | [GenericFeatureWithFn, WBHLevel | FeatureOpts]
 >
 
 export type Result = {
