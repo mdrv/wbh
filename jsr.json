@@ -3,12 +3,14 @@
 	"include": [
 		"LICENSE",
 		"README.md",
-		"src/**/*.ts"
+		"src/v*/**/*.ts"
 	],
 	"exclude": [
 		"bun.lock",
 		"dprint.json",
 		"tsdown.config.ts",
-		"res/"
+		"src/*.ts",
+		"res/",
+		".github/"
 	]
 }
