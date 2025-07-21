@@ -38,20 +38,20 @@ jobs:
           node-version: latest
           registry-url: 'https://registry.npmjs.org/'
           scope: '@mdrv'
-      # - name: 'Publish to NPM: `wbh`'
-      #   run: npm publish --provenance --access public
-      #   env:
-      #     NPM_CONFIG_TOKEN: ${{secrets.NPM_TOKEN}}
-      #     NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
-      - name: 'Rename package with longer alias: `@mdrv/wbh`'
-        run: sed -i -r "$COMMAND" package.json
+      - name: 'Publish to NPM: `wbh`'
+        run: npm publish --provenance --access public
         env:
-          COMMAND: 's/"name": "wbh"/"name": "@mdrv\/wbh"/'
-        # run: |
-        #   jq \
-        #     '.name|="@mdrv/wbh"' \
-        #     package.json > package.json~
-        #   mv package.json~ package.json
+          NPM_CONFIG_TOKEN: ${{secrets.NPM_TOKEN}}
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+      - name: 'Rename package with longer alias: `@mdrv/wbh`'
+        # run: sed -i -r "$COMMAND" package.json
+        # env:
+        #   COMMAND: 's/"name": "wbh"/"name": "@mdrv\/wbh"/'
+        run: |
+          jq \
+            '.name|="@mdrv/wbh"' \
+            package.json > package.json~
+          mv package.json~ package.json
       - name: Sleep for 10 seconds (to prevent E409 Conflict)
         run: sleep 10s
         shell: bash
