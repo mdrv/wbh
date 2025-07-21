@@ -14,6 +14,8 @@
 	"license": "GPL-3.0",
 	"author": "Umar Alfarouk <medrivia@gmail.com> (https://alfarouk.id)",
 	"type": "module",
+	"main": "./src/v257/index.ts",
+	"types": "./src/v257/index.ts",
 	"exports": {
 		".": "./src/v257/index.ts",
 		"./data": "./src/v257/data.ts",
