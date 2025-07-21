@@ -33,16 +33,11 @@ jobs:
             'reduce .publishConfig as $in (.; . + $in) | del(.publishConfig)' \
             package.json > package.json~
           mv package.json~ package.json
-      # - uses: actions/setup-node@v4
-      #   with:
-      #     node-version: latest
-      #     registry-url: 'https://registry.npmjs.org/'
-      #     scope: '@mdrv'
-      - run: npm config set @mdrv:registry=https://registry.npmjs.org/
-      - run: npm config set registry=https://registry.npmjs.org/
-      - run: npm config set https://registry.npmjs.org/:_auth=$NPM_TOKEN
-        env:
-           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: latest
+          registry-url: 'https://registry.npmjs.org/'
+          scope: '@mdrv'
       - name: 'Publish to NPM: `wbh`'
         run: npm publish --provenance --access public
         env:
@@ -52,8 +47,8 @@ jobs:
         run: sed -i -r $COMMAND package.json
         env:
           COMMAND: 's/"name": "wbh"/"name": "@mdrv\/wbh"/'
-      - name: Sleep for 30 seconds (to prevent E409 Conflict)
-        run: sleep 30s
+      - name: Sleep for 10 seconds (to prevent E409 Conflict)
+        run: sleep 10s
         shell: bash
       - name: 'Publish to NPM: `@mdrv/wbh`'
         run: npm publish --provenance --access public
