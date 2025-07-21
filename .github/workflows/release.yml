@@ -32,6 +32,13 @@ jobs:
       - uses: actions/checkout@v4
       - name: Remove GitHub alerts from README.md for NPM/JSR
         run: sed -i -r '/^>\s+\[!\w+\]/d' ./README.md
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+          registry-url: "https://registry.npmjs.org/"
+          scope: "@mdrv"
+      - run: bun i # install
+      - run: bun g # generate
       - name: "Remove publishConfig"
         run: |
           jq \
