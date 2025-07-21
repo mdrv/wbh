@@ -35,8 +35,6 @@ jobs:
       - uses: oven-sh/setup-bun@v2
         with:
           bun-version: latest
-          registry-url: "https://registry.npmjs.org/"
-          scope: "@mdrv"
       - run: bun i # install
       - run: bun g # generate
       - name: "Remove publishConfig"
@@ -48,10 +46,10 @@ jobs:
       - name: Publish to JSR
         run: |
           jq \
-            '{name:"@mdrv/wbh",version,license,exports}' \
-            package.json > jsr.json
+            -s '.[0] * (.[1] | {version,license,exports})' \
+            jsr.json package.json > jsr.json~
+          mv jsr.json~ jsr.json
           bunx jsr publish --allow-dirty
-          rm jsr.json
   npm-release:
     if: ${{ github.event_name == 'release' || inputs.npm }}
     env:
