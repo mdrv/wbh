@@ -50,7 +50,7 @@ jobs:
           jq \
             '{name:"@mdrv/wbh",version,license,exports}' \
             package.json > jsr.json
-          bunx jsr publish --provenance --allow-dirty
+          bunx jsr publish --allow-dirty
           rm jsr.json
   npm-release:
     if: ${{ github.event_name == 'release' || inputs.npm }}
