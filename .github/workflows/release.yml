@@ -36,7 +36,7 @@ jobs:
         with:
           bun-version: latest
       - run: bun i # install
-      - run: bun g # generate
+      - run: bun --if-present g # generate
       - name: "Remove publishConfig"
         run: |
           jq \
@@ -68,8 +68,8 @@ jobs:
           registry-url: "https://registry.npmjs.org/"
           scope: "@mdrv"
       - run: bun i # install
-      - run: bun g # generate
-      - run: bun b # build
+      - run: bun --if-present g # generate
+      - run: bun --if-present b # build
       - name: "Use data from publishConfig"
         run: |
           jq \
