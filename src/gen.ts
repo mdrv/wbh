@@ -70,7 +70,7 @@ const getData = (key: string | ReadonlyArray<string>) => {
 			}
 		}
 	} catch (err) {
-		throw new Error(key)
+		throw new Error(String(key))
 	}
 }
 

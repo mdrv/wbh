@@ -8,7 +8,6 @@ export default defineConfig({
 	minify: {
 		// compress: true,
 		// mangle: true,
-		removeWhitespace: true,
 	},
 	outDir: 'dist',
 	outputOptions: {

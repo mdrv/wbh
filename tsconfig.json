@@ -3,8 +3,8 @@
 	"compilerOptions": {
 		// Environment setup & latest features
 		"lib": ["ESNext", "dom"],
-		"target": "es2015",
-		"module": "es2015",
+		"target": "es2022",
+		"module": "es2020",
 		"moduleDetection": "force",
 
 		"outDir": "./dist/",

@@ -298,6 +298,7 @@ dialog {
     max-width: min(320px, 100%);
     border: none;
     border-radius: 1rem;
+	margin: auto;
     opacity: 0;
     padding: 0;
     &[open] {

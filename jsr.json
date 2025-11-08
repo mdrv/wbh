@@ -1,10 +1,6 @@
 {
 	"name": "@mdrv/wbh",
-	"include": [
-		"LICENSE",
-		"README.md",
-		"src/v*/**/*.ts"
-	],
+	"include": ["LICENSE", "README.md", "src/v*/**/*.ts"],
 	"exclude": [
 		"bun.lock",
 		"dprint.json",
