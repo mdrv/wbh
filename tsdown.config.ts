@@ -2,7 +2,7 @@ import { defineConfig } from 'tsdown'
 
 export default defineConfig({
 	dts: true,
-	entry: ['src/v*/**/!(*.test).ts'],
+	entry: ['src/**/!(*.test).ts'],
 	// @remarks `minify` still in alpha
 	// https://tsdown.dev/options/minification
 	minify: {

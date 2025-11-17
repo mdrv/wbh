@@ -4,9 +4,7 @@
 
 import * as owned from './data0.ts'
 const original = await Bun.file(`${__dirname}/data0.ts`).text()
-if (!Bun.env.V || !Bun.env.V.match(/^\d{3}$/))
-	throw new Error('Please specify env.V with 3-digit version!')
-const generated = `${__dirname}/v${Bun.env.V}/data.ts`
+const generated = `${__dirname}/../src/data.ts`
 
 import bcd, {
 	type CompatData,

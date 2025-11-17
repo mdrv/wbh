@@ -31,18 +31,9 @@
 - 📊 **Versatile**: Pick from [50+ browser features](https://github.com/mdrv/wbh/wiki/feature-list) to get checked
 - 🎛️ **Customizable**: Set metadata, header and footer as you like
 - 🌲 **Tree-shakeable**: Unused imports stay out of bundle
-- 🚀 **Easy to use**: Comes with TypeScript and `mountError` function
+- 🚀 **Easy to use**: Comes with TypeScript types
 
 Any question? You can first read [Q&A](https://github.com/mdrv/wbh/wiki/Q&A) on the wiki.
-
-## 📷 Screenshot
-
-|                               Dark                                |                                Light                                |
-| :---------------------------------------------------------------: | :-----------------------------------------------------------------: |
-| ![Example screenshot (dark mode, AVIF)](./res/example1-dark.avif) | ![Example screenshot (light mode, AVIF)](./res/example1-light.avif) |
-
-> [!NOTE]
-> If you can’t see the screenshot above, that means your browser does not support [AVIF image format](https://caniuse.com/avif)!
 
 ## 🧭 Example Code
 
@@ -94,14 +85,8 @@ wbh.lastResultAsync.then((result) => {
 		/* Render your actual app here! */
 		/* mount(App, target) */
 	} else {
-		import('@mdrv/wbh/mount').then(({ mountError }) =>
-			mountError(result, target, {
-				/* You can customize header with DOM element/Markdown */
-				headerEl: '# Oops! :(',
-				/* You can customize footer with Markdown */
-				footerMd: '[Powered by **@mdrv/wbh**](https://github.com/mdrv/wbh)',
-			}),
-		)
+		/* The browser (most likely) doesn’t support all feature. */
+		/* console.dir(result) */
 	}
 })
 ```
@@ -110,16 +95,8 @@ wbh.lastResultAsync.then((result) => {
 
 This package implements **Gregorian YYM-based** semver notation.
 
-- 📅 `v257.x.x`: Released around/on July 2025. **(current)**
-- 🚀 `v260.x.x`: Released from October to December 2025.
-
-For every major release, the preceding version will need to be imported with subpath:
-
-```ts
-/* Example: v260.x.x */
-import { WBH as WBHv260 } from '@mdrv/wbh' // v260 (current)
-import { WBH } from '@mdrv/wbh/v257' // v257 (previous)
-```
+- 📅 `v257.x.x`: Released around/on July 2025.
+- 🚀 `v260.x.x`: Released from October to December 2025. **(current)**
 
 See [CHANGELOG](https://github.com/mdrv/wbh/wiki/changelog) for breaking changes, updates and fixes.
 
@@ -127,8 +104,6 @@ See [CHANGELOG](https://github.com/mdrv/wbh/wiki/changelog) for breaking changes
 
 This project is proudly using these libraries:
 
-- 🎨 [**RE:DOM**](https://github.com/redom/redom) (the most versatile yet lightweight DOM library)
-- 📑 [**Snarkdown**](https://github.com/developit/snarkdown) (a very minimalist Markdown-to-HTML library)
 - 🧩 [**es-toolkit**](https://github.com/toss/es-toolkit) (modern JS utilities with TypeScript support)
 - 🥟 [**Bun.js**](https://github.com/oven-sh/bun) (blazing fast server-side JS runtime)
 - 📚 Additional data: [**MDN**](https://github.com/mdn/browser-compat-data) and [**Can I use...**](https://github.com/Fyrd/caniuse)

@@ -34,7 +34,7 @@ export const dynamicImport = {
 	caniuse: 'es6-module-dynamic-import',
 	fn: (): boolean => {
 		try {
-			import('redom')
+			import('is-mobile')
 		} catch {
 			return false
 		}

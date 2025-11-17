@@ -1,12 +1,5 @@
 {
 	"name": "@mdrv/wbh",
-	"include": ["LICENSE", "README.md", "src/v*/**/*.ts"],
-	"exclude": [
-		"bun.lock",
-		"dprint.json",
-		"tsdown.config.ts",
-		"src/*.ts",
-		"res/",
-		".github/"
-	]
+	"include": ["LICENSE", "README.md", "src/**/*.ts"],
+	"exclude": ["bun.lock", "dprint.json", "tsdown.config.ts", "res/", ".github/"]
 }
