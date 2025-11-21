@@ -34,7 +34,12 @@ const getResult: (features: Array<Feature>) => Result = (features) => {
 	const missingList = features
 		.filter(({ isAsync, fn }) => {
 			// H: SKIPPED async functions!
-			return !isAsync && !fn()
+			if (isAsync) return false
+			try {
+				return !fn()
+			} catch {
+				return true
+			}
 		})
 		.sort((a, b) => a.level - b.level)
 
@@ -110,13 +115,21 @@ class WBH {
 	}
 
 	async getResultAsync(): Promise<Result> {
-		this.#result = this.#options.forceFail
-			? {
-					score: -1,
-					unsupported: this.features,
-				}
-			: await getResultAsync(this.features)
-		return this.lastResult
+		if (this.#resultAsync) return this.#resultAsync
+		if (this.#options.forceFail) {
+			this.#result = {
+				score: -1,
+				unsupported: this.features,
+			}
+			this.#resultAsync = Promise.resolve(this.#result)
+			return this.#result
+		}
+		this.#resultAsync = (async () => {
+			const res = await getResultAsync(this.features)
+			this.#result = res
+			return res
+		})()
+		return this.#resultAsync
 	}
 
 	get lastResult(): Result {
@@ -124,7 +137,10 @@ class WBH {
 	}
 
 	get lastResultAsync(): Promise<Result> {
-		return this.#resultAsync ?? this.getResultAsync()
+		return (
+			this.#resultAsync ??
+			(this.#result ? Promise.resolve(this.#result) : this.getResultAsync())
+		)
 	}
 
 	get isCompatible(): boolean {

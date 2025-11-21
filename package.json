@@ -18,8 +18,7 @@
 	"types": "./src/index.ts",
 	"exports": {
 		".": "./src/index.ts",
-		"./data": "./src/data.ts",
-		"./mount": "./src/mount.ts"
+		"./data": "./src/data.ts"
 	},
 	"files": ["dist"],
 	"scripts": {
@@ -39,10 +38,6 @@
 			"./data": {
 				"default": "./dist/data.js",
 				"types": "./dist/data.d.ts"
-			},
-			"./mount": {
-				"default": "./dist/mount.js",
-				"types": "./dist/mount.d.ts"
 			}
 		}
 	},
