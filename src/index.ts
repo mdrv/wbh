@@ -107,13 +107,12 @@ class WBH {
 	getResult(): Result {
 		this.#result = this.#options.forceFail
 			? {
-				score: -1,
-				unsupported: this.features,
-			}
+					score: -1,
+					unsupported: this.features,
+				}
 			: getResult(this.features)
 		return this.lastResult
 	}
-
 
 	async getResultAsync(): Promise<Result> {
 		if (this.#resultAsync) return this.#resultAsync

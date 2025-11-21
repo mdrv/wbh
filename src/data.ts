@@ -57,7 +57,9 @@ export const dynamicImport = {
 	isAsync: true,
 	fn: async (): Promise<boolean> => {
 		try {
-			const fn = new Function('return import("data:text/javascript,export default true")')
+			const fn = new Function(
+				'return import("data:text/javascript,export default true")',
+			)
 			await fn()
 			return true
 		} catch {
