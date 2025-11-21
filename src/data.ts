@@ -54,13 +54,15 @@ export const dynamicImport = {
 	key: 'dynamicImport',
 	name: 'Dynamic imports',
 	caniuse: 'es6-module-dynamic-import',
-	fn: (): boolean => {
+	isAsync: true,
+	fn: async (): Promise<boolean> => {
 		try {
-			import('redom')
+			const fn = new Function('return import("data:text/javascript,export default true")')
+			await fn()
+			return true
 		} catch {
 			return false
 		}
-		return true
 	},
 } as const
 
