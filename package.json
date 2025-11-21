@@ -38,10 +38,6 @@
 			"./data": {
 				"default": "./dist/data.js",
 				"types": "./dist/data.d.ts"
-			},
-			"./mount": {
-				"default": "./dist/mount.js",
-				"types": "./dist/mount.d.ts"
 			}
 		}
 	},

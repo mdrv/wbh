@@ -111,7 +111,6 @@ class WBH {
 				unsupported: this.features,
 			}
 			: getResult(this.features)
-		if (!this.#resultAsync) this.#resultAsync = Promise.resolve(this.#result)
 		return this.lastResult
 	}
 
