@@ -1,0 +1,17 @@
+# lefthook.yml — Enforces version-prefixed commits + auto-bump on every commit
+
+commit-msg:
+  scripts:
+    "enforce-version-prefix":
+      runner: bash
+
+pre-commit:
+  commands:
+    "auto-version-bump":
+      run: bun run .lefthook/scripts/version-bump.ts {staged_files}
+      stage_fixed: true
+
+pre-push:
+  commands:
+    "version-consistency":
+      run: bun run .lefthook/scripts/version-check.ts

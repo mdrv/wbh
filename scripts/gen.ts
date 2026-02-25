@@ -6,10 +6,7 @@ import * as owned from './data0.ts'
 const original = await Bun.file(`${__dirname}/data0.ts`).text()
 const generated = `${__dirname}/../src/data.ts`
 
-import bcd, {
-	type CompatData,
-	type CompatStatement,
-} from '@mdn/browser-compat-data' with { type: 'json' }
+import bcd from '@mdn/browser-compat-data' with { type: 'json' }
 import db from 'caniuse-db/data.json' with { type: 'json' }
 import { get } from 'es-toolkit/compat'
 import { isEqual } from 'es-toolkit'
@@ -22,11 +19,13 @@ const getData = (key: string | ReadonlyArray<string>) => {
 		if (Array.isArray(key)) {
 			const _s = get(bcd, key)
 			const s = _s.__compat
-			const [chrome, chrome_android, firefox, firefox_android] = [
+			const [chrome, chrome_android, firefox, firefox_android, safari, edge] = [
 				'chrome',
 				'chrome_android',
 				'firefox',
 				'firefox_android',
+				'safari',
+				'edge',
 			].map(
 				(browser) =>
 					s.support[browser]?.version_added ??
@@ -44,15 +43,19 @@ const getData = (key: string | ReadonlyArray<string>) => {
 				chrome_android,
 				firefox,
 				firefox_android,
+				safari,
+				edge,
 				url,
 			}
 		} else {
 			const s = db.data[key]
-			const [chrome, chrome_android, firefox, firefox_android] = [
+			const [chrome, chrome_android, firefox, firefox_android, safari, edge] = [
 				'chrome',
 				'and_chr',
 				'firefox',
 				'and_ff',
+				'safari',
+				'edge',
 			].map((browser) => getFirstY(s?.stats?.[browser]))
 			const url = 'https://caniuse.com/' + key
 			const { title, description } = s
@@ -64,6 +67,8 @@ const getData = (key: string | ReadonlyArray<string>) => {
 				chrome_android,
 				firefox,
 				firefox_android,
+				safari,
+				edge,
 				url,
 			}
 		}

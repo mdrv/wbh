@@ -13,9 +13,11 @@ export const arrowFunction = {
 		description:
 			'Function shorthand using `=>` syntax and lexical `this` binding.',
 		chrome: '45',
-		chrome_android: '142',
+		chrome_android: '148',
 		firefox: '22',
-		firefox_android: '144',
+		firefox_android: '150',
+		safari: '10',
+		edge: '12',
 		url: 'https://caniuse.com/arrow-functions',
 	},
 	key: 'arrowFunction',
@@ -46,21 +48,19 @@ export const dynamicImport = {
 		description:
 			'Loading JavaScript modules dynamically using the import() syntax',
 		chrome: '63',
-		chrome_android: '142',
+		chrome_android: '148',
 		firefox: '67',
-		firefox_android: '144',
+		firefox_android: '150',
+		safari: '12',
+		edge: '79',
 		url: 'https://caniuse.com/es6-module-dynamic-import',
 	},
 	key: 'dynamicImport',
 	name: 'Dynamic imports',
 	caniuse: 'es6-module-dynamic-import',
-	isAsync: true,
-	fn: async (): Promise<boolean> => {
+	fn: (): boolean => {
 		try {
-			const fn = new Function(
-				'return import("data:text/javascript,export default true")',
-			)
-			await fn()
+			new Function('return import("data:text/javascript,")')
 			return true
 		} catch {
 			return false
@@ -80,6 +80,8 @@ export const userAgent = {
 		chrome_android: '18',
 		firefox: '1',
 		firefox_android: '4',
+		safari: '1',
+		edge: '12',
 		url: 'https://developer.mozilla.org/docs/Web/API/Navigator/userAgent',
 	},
 	key: 'userAgent',
@@ -101,9 +103,11 @@ export const indexedDb = {
 		description:
 			'Improvements to Indexed DB, including getAll(), renaming stores and indexes, and binary keys.',
 		chrome: '58',
-		chrome_android: '142',
+		chrome_android: '148',
 		firefox: '51',
-		firefox_android: '144',
+		firefox_android: '150',
+		safari: '11',
+		edge: '79',
 		url: 'https://caniuse.com/indexeddb2',
 	},
 	key: 'indexedDb',
@@ -128,6 +132,8 @@ export const fileSystemApi = {
 		chrome_android: '109',
 		firefox: '111',
 		firefox_android: '111',
+		safari: '15.2',
+		edge: '86',
 		url: 'https://developer.mozilla.org/docs/Web/API/StorageManager/getDirectory',
 	},
 	key: 'fileSystemApi',
@@ -152,9 +158,11 @@ export const customElements = {
 		description:
 			'One of the key features of the Web Components system, custom elements allow new HTML tags to be defined.',
 		chrome: '67',
-		chrome_android: '142',
+		chrome_android: '148',
 		firefox: '63',
-		firefox_android: '144',
+		firefox_android: '150',
+		safari: false,
+		edge: '79',
 		url: 'https://caniuse.com/custom-elementsv1',
 	},
 	key: 'customElements',
@@ -176,6 +184,8 @@ export const cssInset = {
 		chrome_android: '87',
 		firefox: '66',
 		firefox_android: '66',
+		safari: '14.1',
+		edge: '87',
 		url: 'https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/inset',
 	},
 	key: 'cssInset',
@@ -199,6 +209,8 @@ export const cssDetailsContent = {
 		chrome_android: '131',
 		firefox: '143',
 		firefox_android: '143',
+		safari: '18.4',
+		edge: '131',
 		url: 'https://developer.mozilla.org/docs/Web/CSS/Reference/Selectors/::details-content',
 	},
 	key: 'cssDetailsContent',
@@ -220,9 +232,11 @@ export const cssMathFunctions = {
 		description:
 			'More advanced mathematical expressions in addition to `calc()`',
 		chrome: '79',
-		chrome_android: '142',
+		chrome_android: '148',
 		firefox: '75',
-		firefox_android: '144',
+		firefox_android: '150',
+		safari: '14',
+		edge: '79',
 		url: 'https://caniuse.com/css-math-functions',
 	},
 	key: 'cssMathFunctions',
@@ -247,9 +261,11 @@ export const cssBoxShadow = {
 		description:
 			'Method of displaying an inner or outer shadow effect to elements',
 		chrome: '10',
-		chrome_android: '142',
+		chrome_android: '148',
 		firefox: '4',
-		firefox_android: '144',
+		firefox_android: '150',
+		safari: '6',
+		edge: '12',
 		url: 'https://caniuse.com/css-boxshadow',
 	},
 	key: 'cssBoxShadow',
@@ -269,9 +285,11 @@ export const cssGrid = {
 		description:
 			'Method of using a grid concept to lay out content, providing a mechanism for authors to divide available space for layout into columns and rows using a set of predictable sizing behaviors. Includes support for all `grid-*` properties and the `fr` unit.',
 		chrome: '58',
-		chrome_android: '142',
+		chrome_android: '148',
 		firefox: '54',
-		firefox_android: '144',
+		firefox_android: '150',
+		safari: '11',
+		edge: '16',
 		url: 'https://caniuse.com/css-grid',
 	},
 	key: 'cssGrid',
@@ -295,6 +313,8 @@ export const cssAspectRatio = {
 		chrome_android: '88',
 		firefox: '89',
 		firefox_android: '89',
+		safari: '15',
+		edge: '88',
 		url: 'https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/aspect-ratio',
 	},
 	key: 'cssAspectRatio',
@@ -315,6 +335,8 @@ export const cssContainerType = {
 		chrome_android: '105',
 		firefox: '110',
 		firefox_android: '110',
+		safari: '16',
+		edge: '105',
 		url: 'https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/container-type',
 	},
 	key: 'cssContainerType',
@@ -336,9 +358,11 @@ export const cssSubgrid = {
 		description:
 			'Feature of the CSS Grid Layout Module Level 2 that allows a grid-item with its own grid to align in one or both dimensions with its parent grid.',
 		chrome: '117',
-		chrome_android: '142',
+		chrome_android: '148',
 		firefox: '71',
-		firefox_android: '144',
+		firefox_android: '150',
+		safari: '16.0',
+		edge: '117',
 		url: 'https://caniuse.com/css-subgrid',
 	},
 	key: 'cssSubgrid',
@@ -360,6 +384,8 @@ export const cssRubyAlign = {
 		chrome_android: '128',
 		firefox: '38',
 		firefox_android: '38',
+		safari: '18.2',
+		edge: '128',
 		url: 'https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/ruby-align',
 	},
 	key: 'cssRubyAlign',
@@ -383,6 +409,8 @@ export const cssTextWrap = {
 		chrome_android: '114',
 		firefox: '121',
 		firefox_android: '121',
+		safari: '17.4',
+		edge: '114',
 		url: 'https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/text-wrap',
 	},
 	key: 'cssTextWrap',
@@ -403,6 +431,8 @@ export const cssDominantBaseline = {
 		chrome_android: '18',
 		firefox: '1',
 		firefox_android: '4',
+		safari: '4',
+		edge: '79',
 		url: 'https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/dominant-baseline',
 	},
 	key: 'cssDominantBaseline',
@@ -423,6 +453,8 @@ export const cssFilter = {
 		chrome_android: '53',
 		firefox: '35',
 		firefox_android: '35',
+		safari: '9.1',
+		edge: '12',
 		url: 'https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/filter',
 	},
 	key: 'cssFilter',
@@ -443,6 +475,8 @@ export const cssMixBlendMode = {
 		chrome_android: '41',
 		firefox: '32',
 		firefox_android: '32',
+		safari: '8',
+		edge: '79',
 		url: 'https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/mix-blend-mode',
 	},
 	key: 'cssMixBlendMode',
@@ -463,6 +497,8 @@ export const cssRubyPosition = {
 		chrome_android: '84',
 		firefox: '38',
 		firefox_android: '38',
+		safari: '18.2',
+		edge: '84',
 		url: 'https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/ruby-position',
 	},
 	key: 'cssRubyPosition',
@@ -483,6 +519,8 @@ export const cssScale = {
 		chrome_android: '104',
 		firefox: '72',
 		firefox_android: '79',
+		safari: '14.1',
+		edge: '104',
 		url: 'https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/scale',
 	},
 	key: 'cssScale',
@@ -504,6 +542,8 @@ export const cssScrollbarWidth = {
 		chrome_android: '121',
 		firefox: '64',
 		firefox_android: '64',
+		safari: '18.2',
+		edge: '121',
 		url: 'https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/scrollbar-width',
 	},
 	key: 'cssScrollbarWidth',
@@ -527,6 +567,8 @@ export const cssScrollbarColor = {
 		chrome_android: '121',
 		firefox: '64',
 		firefox_android: '64',
+		safari: '26.2',
+		edge: '121',
 		url: 'https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/scrollbar-color',
 	},
 	key: 'cssScrollbarColor',
@@ -547,9 +589,11 @@ export const cssTouchAction = {
 		description:
 			'touch-action is a CSS property that controls filtering of gesture events, providing developers with a declarative mechanism to selectively disable touch scrolling (in one or both axes) or double-tap-zooming.',
 		chrome: '36',
-		chrome_android: '142',
+		chrome_android: '148',
 		firefox: '57',
-		firefox_android: '144',
+		firefox_android: '150',
+		safari: false,
+		edge: '12',
 		url: 'https://caniuse.com/css-touch-action',
 	},
 	key: 'cssTouchAction',
@@ -570,6 +614,8 @@ export const cssUserSelect = {
 		chrome_android: '54',
 		firefox: '69',
 		firefox_android: '79',
+		safari: false,
+		edge: '79',
 		url: 'https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/user-select',
 	},
 	key: 'cssUserSelect',
@@ -590,6 +636,8 @@ export const cssZIndex = {
 		chrome_android: '18',
 		firefox: '1',
 		firefox_android: '4',
+		safari: '1',
+		edge: '12',
 		url: 'https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/z-index',
 	},
 	key: 'cssZIndex',
@@ -609,9 +657,11 @@ export const cssZoom = {
 		title: 'CSS zoom',
 		description: 'Method of scaling content while also affecting layout.',
 		chrome: '4',
-		chrome_android: '142',
+		chrome_android: '148',
 		firefox: '126',
-		firefox_android: '144',
+		firefox_android: '150',
+		safari: '4',
+		edge: '12',
 		url: 'https://caniuse.com/css-zoom',
 	},
 	key: 'cssZoom',
@@ -632,6 +682,8 @@ export const cssWebkitTextStroke = {
 		chrome_android: '18',
 		firefox: '49',
 		firefox_android: '49',
+		safari: '3',
+		edge: '15',
 		url: 'https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/-webkit-text-stroke',
 	},
 	key: 'cssWebkitTextStroke',
@@ -653,6 +705,8 @@ export const cssPaintOrder = {
 		chrome_android: '123',
 		firefox: '60',
 		firefox_android: '60',
+		safari: '11',
+		edge: '123',
 		url: 'https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/paint-order',
 	},
 	key: 'cssPaintOrder',
@@ -677,6 +731,8 @@ export const cssInterpolateSize = {
 		chrome_android: '129',
 		firefox: false,
 		firefox_android: false,
+		safari: false,
+		edge: '129',
 		url: 'https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/interpolate-size',
 	},
 	key: 'cssInterpolateSize',
@@ -696,6 +752,8 @@ export const cssConicGradient = {
 		chrome_android: '69',
 		firefox: '83',
 		firefox_android: '83',
+		safari: '12.1',
+		edge: '79',
 		url: 'https://developer.mozilla.org/docs/Web/CSS/Reference/Values/gradient/conic-gradient',
 	},
 	key: 'cssConicGradient',
@@ -720,9 +778,11 @@ export const cssRelativeColors = {
 		description:
 			'Relative color syntax in CSS allows a color to be defined relative to another color using the `from` keyword and optionally `calc()` for any of the color values.',
 		chrome: '131',
-		chrome_android: '142',
+		chrome_android: '148',
 		firefox: '133',
-		firefox_android: '144',
+		firefox_android: '150',
+		safari: '18.0',
+		edge: '131',
 		url: 'https://caniuse.com/css-relative-colors',
 	},
 	key: 'cssRelativeColors',
@@ -743,6 +803,8 @@ export const cssOklch = {
 		chrome_android: '111',
 		firefox: '113',
 		firefox_android: '113',
+		safari: '15.4',
+		edge: '111',
 		url: 'https://developer.mozilla.org/docs/Web/CSS/Reference/Values/color_value/oklch',
 	},
 	key: 'cssOklch',
@@ -763,9 +825,11 @@ export const webAnimations = {
 		description:
 			'Lets you create animations that are run in the browser, as well as inspect and manipulate animations created through declarative means like CSS.',
 		chrome: '84',
-		chrome_android: '142',
+		chrome_android: '148',
 		firefox: '81',
-		firefox_android: '144',
+		firefox_android: '150',
+		safari: '15',
+		edge: '84',
 		url: 'https://caniuse.com/web-animation',
 	},
 	key: 'webAnimations',
@@ -794,9 +858,11 @@ export const resizeObserver = {
 		description:
 			'Method for observing and reacting to changes to sizes of DOM elements.',
 		chrome: '64',
-		chrome_android: '142',
+		chrome_android: '148',
 		firefox: '69',
-		firefox_android: '144',
+		firefox_android: '150',
+		safari: '14',
+		edge: '79',
 		url: 'https://caniuse.com/resizeobserver',
 	},
 	key: 'resizeObserver',
@@ -823,9 +889,11 @@ export const webSockets = {
 		title: 'Web Sockets',
 		description: 'Bidirectional communication technology for web apps',
 		chrome: '16',
-		chrome_android: '142',
+		chrome_android: '148',
 		firefox: '11',
-		firefox_android: '144',
+		firefox_android: '150',
+		safari: '7',
+		edge: '12',
 		url: 'https://caniuse.com/websockets',
 	},
 	key: 'webSockets',
@@ -854,6 +922,8 @@ export const scrollTimeline = {
 		chrome_android: '115',
 		firefox: false,
 		firefox_android: false,
+		safari: '26',
+		edge: '115',
 		url: 'https://developer.mozilla.org/docs/Web/API/ScrollTimeline',
 	},
 	key: 'scrollTimeline',
@@ -883,6 +953,8 @@ export const viewTimeline = {
 		chrome_android: '115',
 		firefox: false,
 		firefox_android: false,
+		safari: '26',
+		edge: '115',
 		url: 'https://developer.mozilla.org/docs/Web/API/ViewTimeline',
 	},
 	key: 'viewTimeline',
@@ -911,6 +983,8 @@ export const setIntersection = {
 		chrome_android: '122',
 		firefox: '127',
 		firefox_android: '127',
+		safari: '17',
+		edge: '122',
 		url: 'https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Set/intersection',
 	},
 	key: 'setIntersection',
@@ -933,6 +1007,8 @@ export const setIsDisjointFrom = {
 		chrome_android: '122',
 		firefox: '127',
 		firefox_android: '127',
+		safari: '17',
+		edge: '122',
 		url: 'https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Set/isDisjointFrom',
 	},
 	key: 'setIsDisjointFrom',
@@ -958,6 +1034,8 @@ export const paymentRequestApi = {
 		chrome_android: false,
 		firefox: false,
 		firefox_android: false,
+		safari: '13',
+		edge: '79',
 		url: 'https://caniuse.com/payment-request',
 	},
 	key: 'paymentRequestApi',
@@ -990,9 +1068,11 @@ export const cssContentVisibility = {
 		description:
 			"Provides control over when elements are rendered, so rendering can be skipped for elements not yet in the user's viewport. ",
 		chrome: '85',
-		chrome_android: '142',
+		chrome_android: '148',
 		firefox: '125',
-		firefox_android: '144',
+		firefox_android: '150',
+		safari: '18.0',
+		edge: '85',
 		url: 'https://caniuse.com/css-content-visibility',
 	},
 	key: 'cssContentVisibility',
@@ -1012,6 +1092,8 @@ export const cssBackdropSelector = {
 		chrome_android: '37',
 		firefox: '47',
 		firefox_android: '47',
+		safari: '15.4',
+		edge: '79',
 		url: 'https://developer.mozilla.org/docs/Web/CSS/Reference/Selectors/::backdrop',
 	},
 	key: 'cssBackdropSelector',
@@ -1033,6 +1115,8 @@ export const cssTransitionBehavior = {
 		chrome_android: '117',
 		firefox: '129',
 		firefox_android: '129',
+		safari: '17.4',
+		edge: '117',
 		url: 'https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/transition-behavior',
 	},
 	key: 'cssTransitionBehavior',
@@ -1054,6 +1138,8 @@ export const cssCalcSize = {
 		chrome_android: '129',
 		firefox: false,
 		firefox_android: false,
+		safari: false,
+		edge: '129',
 		url: 'https://developer.mozilla.org/docs/Web/CSS/Reference/Values/calc-size',
 	},
 	key: 'cssCalcSize',
@@ -1077,9 +1163,11 @@ export const cssBackdropFilter = {
 		description:
 			'Method of applying filter effects (like blur, grayscale or hue) to content/elements below the target element.',
 		chrome: '76',
-		chrome_android: '142',
+		chrome_android: '148',
 		firefox: '103',
-		firefox_android: '144',
+		firefox_android: '150',
+		safari: '18.0',
+		edge: '79',
 		url: 'https://caniuse.com/css-backdrop-filter',
 	},
 	key: 'cssBackdropFilter',
@@ -1102,6 +1190,8 @@ export const cssStartingStyle = {
 		chrome_android: '117',
 		firefox: '129',
 		firefox_android: '129',
+		safari: '17.5',
+		edge: '117',
 		url: 'https://developer.mozilla.org/docs/Web/CSS/Reference/At-rules/@starting-style',
 	},
 	key: 'cssStartingStyle',
@@ -1123,6 +1213,8 @@ export const cssRound = {
 		chrome_android: '125',
 		firefox: '118',
 		firefox_android: '118',
+		safari: '15.4',
+		edge: '125',
 		url: 'https://developer.mozilla.org/docs/Web/CSS/Reference/Values/round',
 	},
 	key: 'cssRound',
@@ -1145,6 +1237,8 @@ export const setHtmlUnsafe = {
 		chrome_android: '124',
 		firefox: '123',
 		firefox_android: '123',
+		safari: '26',
+		edge: '124',
 		url: 'https://developer.mozilla.org/docs/Web/API/Element/setHTMLUnsafe',
 	},
 	key: 'setHtmlUnsafe',
@@ -1165,6 +1259,8 @@ export const toSorted = {
 		chrome_android: '110',
 		firefox: '115',
 		firefox_android: '115',
+		safari: '16',
+		edge: '110',
 		url: 'https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array/toSorted',
 	},
 	key: 'toSorted',
@@ -1195,6 +1291,8 @@ export const inertHtmlAttribute = {
 		chrome_android: '102',
 		firefox: '112',
 		firefox_android: '112',
+		safari: '15.5',
+		edge: '102',
 		url: 'https://developer.mozilla.org/docs/Web/HTML/Reference/Global_attributes/inert',
 	},
 	key: 'inertHtmlAttribute',
@@ -1215,6 +1313,8 @@ export const cryptoRandomUUID = {
 		chrome_android: '92',
 		firefox: '95',
 		firefox_android: '95',
+		safari: '15.4',
+		edge: '92',
 		url: 'https://developer.mozilla.org/docs/Web/API/Crypto/randomUUID',
 	},
 	key: 'cryptoRandomUUID',
@@ -1235,6 +1335,8 @@ export const justifyContentSafe = {
 		chrome_android: '115',
 		firefox: '63',
 		firefox_android: '63',
+		safari: '17.6',
+		edge: '115',
 	},
 	key: 'justifyContentSafe',
 	name: 'CSS justify-content: safe',
@@ -1274,6 +1376,8 @@ export const jpegxl = {
 		chrome_android: false,
 		firefox: false,
 		firefox_android: false,
+		safari: false,
+		edge: false,
 		url: 'https://caniuse.com/jpegxl',
 	},
 	key: 'jpegxl',
@@ -1292,9 +1396,11 @@ export const avif = {
 		description:
 			'A modern image format based on the [AV1 video format](/av1). AVIF generally has better compression than [WebP](/webp), JPEG, PNG and GIF and is designed to supersede them. AVIF competes with [JPEG XL](/jpegxl) which has similar compression quality and is generally seen as more feature-rich than AVIF.',
 		chrome: '85',
-		chrome_android: '142',
+		chrome_android: '148',
 		firefox: '113',
-		firefox_android: '144',
+		firefox_android: '150',
+		safari: '16.4',
+		edge: '121',
 		url: 'https://caniuse.com/avif',
 	},
 	key: 'avif',
@@ -1323,6 +1429,8 @@ export const popover = {
 		chrome_android: '114',
 		firefox: '125',
 		firefox_android: '125',
+		safari: '17',
+		edge: '114',
 		url: 'https://developer.mozilla.org/docs/Web/API/HTMLElement/popover',
 	},
 	key: 'popover',
@@ -1354,7 +1462,9 @@ export const cssGridMasonry = {
 		chrome_android: false,
 		firefox: '77',
 		firefox_android: false,
-		url: 'https://developer.mozilla.org/docs/Web/CSS/CSS_grid_layout/Masonry_layout',
+		safari: 'preview',
+		edge: false,
+		url: 'https://developer.mozilla.org/docs/Web/CSS/Guides/Grid_layout/Masonry_layout',
 	},
 	key: 'cssGridMasonry',
 	name: 'CSS Grid: Masonry layout',
@@ -1366,6 +1476,466 @@ export const cssGridMasonry = {
 	},
 } as const
 
-// TODO: Promise.try
-// TODO: RegExp.escape
-// TODO: Import attributes
+/**
+ * l: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog
+ * l: https://caniuse.com/dialog
+ */
+export const htmlDialog = {
+	data: {
+		origin: 'caniuse',
+		title: 'Dialog element',
+		description:
+			'Method of easily creating custom dialog boxes to display to the user with modal or non-modal options. Also includes a `::backdrop` pseudo-element for behind the element.',
+		chrome: '37',
+		chrome_android: '148',
+		firefox: '98',
+		firefox_android: '150',
+		safari: '15.4',
+		edge: '79',
+		url: 'https://caniuse.com/dialog',
+	},
+	key: 'htmlDialog',
+	name: 'HTML <dialog> element',
+	caniuse: 'dialog',
+	fn: (): boolean => {
+		return (
+			'HTMLDialogElement' in window &&
+			'showModal' in HTMLDialogElement.prototype
+		)
+	},
+} as const
+
+/**
+ * l: https://developer.mozilla.org/en-US/docs/Web/API/View_Transitions_API
+ * l: https://caniuse.com/view-transitions
+ * H: INCOMPATIBLE: Firefox (only same-document since v133)
+ */
+export const viewTransitions = {
+	data: {
+		origin: 'caniuse',
+		title: 'View Transitions API (single-document)',
+		description:
+			'Provides a mechanism for easily creating animated transitions between different DOM states, while also updating the DOM contents in a single step. This API is specific to single-document transitions.',
+		chrome: '111',
+		chrome_android: '148',
+		firefox: '144',
+		firefox_android: '150',
+		safari: '18.0',
+		edge: '111',
+		url: 'https://caniuse.com/view-transitions',
+	},
+	key: 'viewTransitions',
+	name: 'View Transitions API',
+	caniuse: 'view-transitions',
+	fn: (): boolean => {
+		return 'startViewTransition' in document
+	},
+} as const
+
+/**
+ * H: JUST RELEASED: Chrome 120 (Released 2023-12-05)
+ * H: JUST RELEASED: Firefox 117 (Released 2023-08-29)
+ * l: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_nesting
+ * l: https://caniuse.com/css-nesting
+ */
+export const cssNesting = {
+	data: {
+		origin: 'caniuse',
+		title: 'CSS Nesting',
+		description:
+			'CSS nesting provides the ability to nest one style rule inside another, with the selector of the child rule relative to the selector of the parent rule. Similar behavior previously required a CSS pre-processor.',
+		chrome: '120',
+		chrome_android: '148',
+		firefox: '117',
+		firefox_android: '150',
+		safari: '17.2',
+		edge: '120',
+		url: 'https://caniuse.com/css-nesting',
+	},
+	key: 'cssNesting',
+	name: 'CSS nesting',
+	caniuse: 'css-nesting',
+	fn: (): boolean => {
+		return CSS.supports('selector(&)')
+	},
+} as const
+
+/**
+ * H: JUST RELEASED: Chrome 105 (Released 2022-08-30)
+ * H: JUST RELEASED: Firefox 121 (Released 2023-12-19)
+ * l: https://developer.mozilla.org/en-US/docs/Web/CSS/:has
+ * l: https://caniuse.com/css-has
+ */
+export const cssHasSelector = {
+	data: {
+		origin: 'caniuse',
+		title: ':has() CSS relational pseudo-class',
+		description:
+			'Select elements containing specific content. For example, `a:has(img)` selects all `<a>` elements that contain an `<img>` child.',
+		chrome: '105',
+		chrome_android: '148',
+		firefox: '121',
+		firefox_android: '150',
+		safari: '15.4',
+		edge: '105',
+		url: 'https://caniuse.com/css-has',
+	},
+	key: 'cssHasSelector',
+	name: 'CSS :has() selector',
+	caniuse: 'css-has',
+	fn: (): boolean => {
+		return CSS.supports('selector(:has(*))')
+	},
+} as const
+
+/**
+ * l: https://developer.mozilla.org/en-US/docs/Web/API/Window/structuredClone
+ * l: https://caniuse.com/mdn-api_structuredclone
+ */
+export const structuredClone = {
+	data: {
+		origin: 'mdn',
+		chrome: '98',
+		chrome_android: '98',
+		firefox: '94',
+		firefox_android: '94',
+		safari: '15.4',
+		edge: '98',
+		url: 'https://developer.mozilla.org/docs/Web/API/Window/structuredClone',
+	},
+	key: 'structuredClone',
+	name: 'structuredClone()',
+	caniuse: ['api', 'structuredClone'],
+	fn: (): boolean => {
+		return 'structuredClone' in window
+	},
+} as const
+
+/**
+ * H: JUST RELEASED: Chrome 119 (Released 2023-10-31)
+ * H: JUST RELEASED: Firefox 121 (Released 2023-12-19)
+ * l: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/withResolvers
+ */
+export const promiseWithResolvers = {
+	data: {
+		origin: 'mdn',
+		chrome: '119',
+		chrome_android: '119',
+		firefox: '121',
+		firefox_android: '121',
+		safari: '17.4',
+		edge: '119',
+		url: 'https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise/withResolvers',
+	},
+	key: 'promiseWithResolvers',
+	name: 'Promise.withResolvers()',
+	caniuse: ['javascript', 'builtins', 'Promise', 'withResolvers'],
+	fn: (): boolean => {
+		return 'withResolvers' in Promise
+	},
+} as const
+
+/**
+ * l: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/at
+ */
+export const arrayAt = {
+	data: {
+		origin: 'mdn',
+		chrome: '92',
+		chrome_android: '92',
+		firefox: '90',
+		firefox_android: '90',
+		safari: '15.4',
+		edge: '92',
+		url: 'https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array/at',
+	},
+	key: 'arrayAt',
+	name: 'Array.at()',
+	caniuse: ['javascript', 'builtins', 'Array', 'at'],
+	fn: (): boolean => {
+		return 'at' in Array.prototype
+	},
+} as const
+
+/**
+ * l: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/with
+ */
+export const arrayWith = {
+	data: {
+		origin: 'mdn',
+		chrome: '110',
+		chrome_android: '110',
+		firefox: '115',
+		firefox_android: '115',
+		safari: '16',
+		edge: '110',
+		url: 'https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array/with',
+	},
+	key: 'arrayWith',
+	name: 'Array.with()',
+	caniuse: ['javascript', 'builtins', 'Array', 'with'],
+	fn: (): boolean => {
+		return 'with' in Array.prototype
+	},
+} as const
+
+/**
+ * H: JUST RELEASED: Chrome 111 (Released 2023-03-07)
+ * H: JUST RELEASED: Firefox 113 (Released 2023-05-09)
+ * l: https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/color-mix
+ */
+export const cssColorMix = {
+	data: {
+		origin: 'mdn',
+		chrome: '111',
+		chrome_android: '111',
+		firefox: '113',
+		firefox_android: '113',
+		safari: '16.2',
+		edge: '111',
+		url: 'https://developer.mozilla.org/docs/Web/CSS/Reference/Values/color_value/color-mix',
+	},
+	key: 'cssColorMix',
+	name: 'CSS color-mix()',
+	caniuse: ['css', 'types', 'color', 'color-mix'],
+	fn: (): boolean => {
+		return CSS.supports('color', 'color-mix(in srgb, red 50%, blue)')
+	},
+} as const
+
+/**
+ * l: https://developer.mozilla.org/en-US/docs/Web/CSS/length#viewport-percentage_lengths
+ * l: https://caniuse.com/viewport-unit-variants
+ */
+export const viewportUnits = {
+	data: {
+		origin: 'caniuse',
+		title: 'Small, Large, and Dynamic viewport units',
+		description:
+			'Viewport units similar to `vw` and `vh` that are based on shown or hidden browser UI states to address shortcomings of the original units. Currently defined as the `sv*` units (`svb`, `svh`, `svi`, `svmax`, `svmin`, `svw`), `lv*` units (`lvb`, `lvh`, `lvi`, `lvmax`, `lvmin`, `lvw`), `dv*` units (`dvb`, `dvh`, `dvi`, `dvmax`, `dvmin`, `dvw`) and the logical `vi`/`vb` units.',
+		chrome: '108',
+		chrome_android: '148',
+		firefox: '101',
+		firefox_android: '150',
+		safari: '15.4',
+		edge: '108',
+		url: 'https://caniuse.com/viewport-unit-variants',
+	},
+	key: 'viewportUnits',
+	name: 'CSS viewport units (svh/lvh/dvh)',
+	caniuse: 'viewport-unit-variants',
+	fn: (): boolean => {
+		return (
+			CSS.supports('height', '1svh') &&
+			CSS.supports('height', '1lvh') &&
+			CSS.supports('height', '1dvh')
+		)
+	},
+} as const
+
+/**
+ * l: https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible
+ * l: https://caniuse.com/css-focus-visible
+ */
+export const cssFocusVisible = {
+	data: {
+		origin: 'caniuse',
+		title: ':focus-visible CSS pseudo-class',
+		description:
+			'The `:focus-visible` pseudo-class applies while an element matches the `:focus` pseudo-class, and the UA determines via heuristics that the focus should be specially indicated on the element (typically via a “focus ring”).',
+		chrome: '86',
+		chrome_android: '148',
+		firefox: '85',
+		firefox_android: '150',
+		safari: '15.4',
+		edge: '86',
+		url: 'https://caniuse.com/css-focus-visible',
+	},
+	key: 'cssFocusVisible',
+	name: 'CSS :focus-visible',
+	caniuse: 'css-focus-visible',
+	fn: (): boolean => {
+		return CSS.supports('selector(:focus-visible)')
+	},
+} as const
+
+/**
+ * H: INCOMPATIBLE: Firefox
+ * H: INCOMPATIBLE: Safari
+ * l: https://developer.mozilla.org/en-US/docs/Web/API/Navigation_API
+ */
+export const navigationApi = {
+	data: {
+		origin: 'mdn',
+		chrome: '102',
+		chrome_android: '102',
+		firefox: '147',
+		firefox_android: '147',
+		safari: '26.2',
+		edge: '102',
+		url: 'https://developer.mozilla.org/docs/Web/API/Navigation',
+	},
+	key: 'navigationApi',
+	name: 'Navigation API',
+	caniuse: ['api', 'Navigation'],
+	fn: (): boolean => {
+		return 'navigation' in window
+	},
+} as const
+
+/**
+ * H: JUST RELEASED: Chrome 95 (Released 2021-10-19)
+ * H: JUST RELEASED: Firefox 107 (Released 2022-11-15)
+ * l: https://developer.mozilla.org/en-US/docs/Web/API/URL_Pattern_API
+ */
+export const urlPattern = {
+	data: {
+		origin: 'mdn',
+		chrome: '95',
+		chrome_android: '95',
+		firefox: '142',
+		firefox_android: '142',
+		safari: '26',
+		edge: '95',
+		url: 'https://developer.mozilla.org/docs/Web/API/URLPattern',
+	},
+	key: 'urlPattern',
+	name: 'URLPattern API',
+	caniuse: ['api', 'URLPattern'],
+	fn: (): boolean => {
+		return 'URLPattern' in window
+	},
+} as const
+
+/**
+ * H: INCOMPATIBLE: Firefox
+ * H: JUST RELEASED: Chrome 125 (Released 2024-05-14)
+ * l: https://developer.mozilla.org/en-US/docs/Web/CSS/anchor-name
+ * l: https://caniuse.com/css-anchor-positioning
+ */
+export const cssAnchorPositioning = {
+	data: {
+		origin: 'caniuse',
+		title: 'CSS Anchor Positioning',
+		description:
+			'Allows placing elements anywhere on the page relative to an "anchor element", without regard to the layout of other elements besides their containing block',
+		chrome: '125',
+		chrome_android: '148',
+		firefox: '147',
+		firefox_android: '150',
+		safari: '26.0',
+		edge: '125',
+		url: 'https://caniuse.com/css-anchor-positioning',
+	},
+	key: 'cssAnchorPositioning',
+	name: 'CSS anchor positioning',
+	caniuse: 'css-anchor-positioning',
+	fn: (): boolean => {
+		return CSS.supports('anchor-name', '--a')
+	},
+} as const
+
+/**
+ * l: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template#declarative_shadow_dom
+ * l: https://caniuse.com/declarative-shadow-dom
+ */
+export const declarativeShadowDom = {
+	data: {
+		origin: 'caniuse',
+		title: 'Declarative Shadow DOM',
+		description:
+			'Proposal to allow rendering elements with shadow dom (aka web components) using server-side rendering.',
+		chrome: '111',
+		chrome_android: '148',
+		firefox: '123',
+		firefox_android: '150',
+		safari: '16.4',
+		edge: '111',
+		url: 'https://caniuse.com/declarative-shadow-dom',
+	},
+	key: 'declarativeShadowDom',
+	name: 'Declarative Shadow DOM',
+	caniuse: 'declarative-shadow-dom',
+	fn: (): boolean => {
+		return 'shadowRootMode' in HTMLTemplateElement.prototype
+	},
+} as const
+
+/**
+ * H: JUST RELEASED: Chrome 128 (Released 2024-08-20)
+ * H: JUST RELEASED: Firefox 132 (Released 2024-10-29)
+ * l: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/try
+ */
+export const promiseTry = {
+	data: {
+		origin: 'mdn',
+		chrome: '128',
+		chrome_android: '128',
+		firefox: '134',
+		firefox_android: '134',
+		safari: '18.2',
+		edge: '128',
+		url: 'https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise/try',
+	},
+	key: 'promiseTry',
+	name: 'Promise.try()',
+	caniuse: ['javascript', 'builtins', 'Promise', 'try'],
+	fn: (): boolean => {
+		return 'try' in Promise
+	},
+} as const
+
+/**
+ * H: JUST RELEASED: Chrome 136 (Released 2025-04-22)
+ * H: JUST RELEASED: Firefox 134 (Released 2025-01-07)
+ * l: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/escape
+ */
+export const regexpEscape = {
+	data: {
+		origin: 'mdn',
+		chrome: '136',
+		chrome_android: '136',
+		firefox: '134',
+		firefox_android: '134',
+		safari: '18.2',
+		edge: '136',
+		url: 'https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp/escape',
+	},
+	key: 'regexpEscape',
+	name: 'RegExp.escape()',
+	caniuse: ['javascript', 'builtins', 'RegExp', 'escape'],
+	fn: (): boolean => {
+		return 'escape' in RegExp
+	},
+} as const
+
+/**
+ * H: JUST RELEASED: Chrome 123 (Released 2024-03-19)
+ * H: JUST RELEASED: Firefox 128 (Released 2024-07-09)
+ * l: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import/with
+ */
+export const importAttributes = {
+	data: {
+		origin: 'mdn',
+		chrome: '123',
+		chrome_android: '123',
+		firefox: '138',
+		firefox_android: '138',
+		safari: '17.2',
+		edge: '123',
+		url: 'https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/import/with',
+	},
+	key: 'importAttributes',
+	name: 'Import attributes',
+	caniuse: ['javascript', 'statements', 'import', 'import_attributes'],
+	fn: (): boolean => {
+		try {
+			new Function(
+				'return import("data:application/json,{}", { with: { type: "json" } })',
+			)
+			return true
+		} catch {
+			return false
+		}
+	},
+} as const

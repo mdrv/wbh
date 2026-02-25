@@ -4,11 +4,11 @@ export type WBHLevel = (typeof Level)[keyof typeof Level]
 export type GenericFeature = {
 	key: string
 	name: string
-	caniuse: string | ReadonlyArray<string>
+	caniuse: readonly string[]
 	level?: number
 	score?: number
 	wisdom?: string
-	url?: string
+	reason?: string
 }
 
 export type GenericFeatureWithFn = GenericFeature &
@@ -22,6 +22,8 @@ export type GenericFeatureWithFn = GenericFeature &
 			firefox: string | false
 			chrome_android: string | false
 			firefox_android: string | false
+			safari: string | false
+			edge: string | false
 			title?: string
 			description?: string
 			url?: string
@@ -48,4 +50,22 @@ export type FeatureMod = Array<
 export type Result = {
 	score: WBHLevel
 	unsupported: Array<Feature>
+	timestamp: number
+	durationMs: number
+}
+
+export type BrowserVersionMap = {
+	readonly chrome: string | null
+	readonly firefox: string | null
+	readonly safari: string | null
+	readonly edge: string | null
+}
+
+export type BrowserComparison = {
+	readonly browser: string
+	readonly version: number | null
+	readonly status: 'current' | 'outdated' | 'unsupported' | 'unknown'
+	readonly gap: number | null
+	readonly missingCritical: ReadonlyArray<Feature>
+	readonly missingOptional: ReadonlyArray<Feature>
 }

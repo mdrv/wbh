@@ -34,11 +34,11 @@ export const dynamicImport = {
 	caniuse: 'es6-module-dynamic-import',
 	fn: (): boolean => {
 		try {
-			import('is-mobile')
+			new Function('return import("data:text/javascript,")')
+			return true
 		} catch {
 			return false
 		}
-		return true
 	},
 } as const
 
@@ -852,6 +852,262 @@ export const cssGridMasonry = {
 	},
 } as const
 
-// TODO: Promise.try
-// TODO: RegExp.escape
-// TODO: Import attributes
+/**
+ * l: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog
+ * l: https://caniuse.com/dialog
+ */
+export const htmlDialog = {
+	key: 'htmlDialog',
+	name: 'HTML <dialog> element',
+	caniuse: 'dialog',
+	fn: (): boolean => {
+		return (
+			'HTMLDialogElement' in window &&
+			'showModal' in HTMLDialogElement.prototype
+		)
+	},
+} as const
+
+/**
+ * l: https://developer.mozilla.org/en-US/docs/Web/API/View_Transitions_API
+ * l: https://caniuse.com/view-transitions
+ * H: INCOMPATIBLE: Firefox (only same-document since v133)
+ */
+export const viewTransitions = {
+	key: 'viewTransitions',
+	name: 'View Transitions API',
+	caniuse: 'view-transitions',
+	fn: (): boolean => {
+		return 'startViewTransition' in document
+	},
+} as const
+
+/**
+ * H: JUST RELEASED: Chrome 120 (Released 2023-12-05)
+ * H: JUST RELEASED: Firefox 117 (Released 2023-08-29)
+ * l: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_nesting
+ * l: https://caniuse.com/css-nesting
+ */
+export const cssNesting = {
+	key: 'cssNesting',
+	name: 'CSS nesting',
+	caniuse: 'css-nesting',
+	fn: (): boolean => {
+		return CSS.supports('selector(&)')
+	},
+} as const
+
+/**
+ * H: JUST RELEASED: Chrome 105 (Released 2022-08-30)
+ * H: JUST RELEASED: Firefox 121 (Released 2023-12-19)
+ * l: https://developer.mozilla.org/en-US/docs/Web/CSS/:has
+ * l: https://caniuse.com/css-has
+ */
+export const cssHasSelector = {
+	key: 'cssHasSelector',
+	name: 'CSS :has() selector',
+	caniuse: 'css-has',
+	fn: (): boolean => {
+		return CSS.supports('selector(:has(*))')
+	},
+} as const
+
+/**
+ * l: https://developer.mozilla.org/en-US/docs/Web/API/Window/structuredClone
+ * l: https://caniuse.com/mdn-api_structuredclone
+ */
+export const structuredClone = {
+	key: 'structuredClone',
+	name: 'structuredClone()',
+	caniuse: ['api', 'structuredClone'],
+	fn: (): boolean => {
+		return 'structuredClone' in window
+	},
+} as const
+
+/**
+ * H: JUST RELEASED: Chrome 119 (Released 2023-10-31)
+ * H: JUST RELEASED: Firefox 121 (Released 2023-12-19)
+ * l: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/withResolvers
+ */
+export const promiseWithResolvers = {
+	key: 'promiseWithResolvers',
+	name: 'Promise.withResolvers()',
+	caniuse: ['javascript', 'builtins', 'Promise', 'withResolvers'],
+	fn: (): boolean => {
+		return 'withResolvers' in Promise
+	},
+} as const
+
+/**
+ * l: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/at
+ */
+export const arrayAt = {
+	key: 'arrayAt',
+	name: 'Array.at()',
+	caniuse: ['javascript', 'builtins', 'Array', 'at'],
+	fn: (): boolean => {
+		return 'at' in Array.prototype
+	},
+} as const
+
+/**
+ * l: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/with
+ */
+export const arrayWith = {
+	key: 'arrayWith',
+	name: 'Array.with()',
+	caniuse: ['javascript', 'builtins', 'Array', 'with'],
+	fn: (): boolean => {
+		return 'with' in Array.prototype
+	},
+} as const
+
+/**
+ * H: JUST RELEASED: Chrome 111 (Released 2023-03-07)
+ * H: JUST RELEASED: Firefox 113 (Released 2023-05-09)
+ * l: https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/color-mix
+ */
+export const cssColorMix = {
+	key: 'cssColorMix',
+	name: 'CSS color-mix()',
+	caniuse: ['css', 'types', 'color', 'color-mix'],
+	fn: (): boolean => {
+		return CSS.supports('color', 'color-mix(in srgb, red 50%, blue)')
+	},
+} as const
+
+/**
+ * l: https://developer.mozilla.org/en-US/docs/Web/CSS/length#viewport-percentage_lengths
+ * l: https://caniuse.com/viewport-unit-variants
+ */
+export const viewportUnits = {
+	key: 'viewportUnits',
+	name: 'CSS viewport units (svh/lvh/dvh)',
+	caniuse: 'viewport-unit-variants',
+	fn: (): boolean => {
+		return (
+			CSS.supports('height', '1svh') &&
+			CSS.supports('height', '1lvh') &&
+			CSS.supports('height', '1dvh')
+		)
+	},
+} as const
+
+/**
+ * l: https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible
+ * l: https://caniuse.com/css-focus-visible
+ */
+export const cssFocusVisible = {
+	key: 'cssFocusVisible',
+	name: 'CSS :focus-visible',
+	caniuse: 'css-focus-visible',
+	fn: (): boolean => {
+		return CSS.supports('selector(:focus-visible)')
+	},
+} as const
+
+/**
+ * H: INCOMPATIBLE: Firefox
+ * H: INCOMPATIBLE: Safari
+ * l: https://developer.mozilla.org/en-US/docs/Web/API/Navigation_API
+ */
+export const navigationApi = {
+	key: 'navigationApi',
+	name: 'Navigation API',
+	caniuse: ['api', 'Navigation'],
+	fn: (): boolean => {
+		return 'navigation' in window
+	},
+} as const
+
+/**
+ * H: JUST RELEASED: Chrome 95 (Released 2021-10-19)
+ * H: JUST RELEASED: Firefox 107 (Released 2022-11-15)
+ * l: https://developer.mozilla.org/en-US/docs/Web/API/URL_Pattern_API
+ */
+export const urlPattern = {
+	key: 'urlPattern',
+	name: 'URLPattern API',
+	caniuse: ['api', 'URLPattern'],
+	fn: (): boolean => {
+		return 'URLPattern' in window
+	},
+} as const
+
+/**
+ * H: INCOMPATIBLE: Firefox
+ * H: JUST RELEASED: Chrome 125 (Released 2024-05-14)
+ * l: https://developer.mozilla.org/en-US/docs/Web/CSS/anchor-name
+ * l: https://caniuse.com/css-anchor-positioning
+ */
+export const cssAnchorPositioning = {
+	key: 'cssAnchorPositioning',
+	name: 'CSS anchor positioning',
+	caniuse: 'css-anchor-positioning',
+	fn: (): boolean => {
+		return CSS.supports('anchor-name', '--a')
+	},
+} as const
+
+/**
+ * l: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template#declarative_shadow_dom
+ * l: https://caniuse.com/declarative-shadow-dom
+ */
+export const declarativeShadowDom = {
+	key: 'declarativeShadowDom',
+	name: 'Declarative Shadow DOM',
+	caniuse: 'declarative-shadow-dom',
+	fn: (): boolean => {
+		return 'shadowRootMode' in HTMLTemplateElement.prototype
+	},
+} as const
+
+/**
+ * H: JUST RELEASED: Chrome 128 (Released 2024-08-20)
+ * H: JUST RELEASED: Firefox 132 (Released 2024-10-29)
+ * l: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/try
+ */
+export const promiseTry = {
+	key: 'promiseTry',
+	name: 'Promise.try()',
+	caniuse: ['javascript', 'builtins', 'Promise', 'try'],
+	fn: (): boolean => {
+		return 'try' in Promise
+	},
+} as const
+
+/**
+ * H: JUST RELEASED: Chrome 136 (Released 2025-04-22)
+ * H: JUST RELEASED: Firefox 134 (Released 2025-01-07)
+ * l: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/escape
+ */
+export const regexpEscape = {
+	key: 'regexpEscape',
+	name: 'RegExp.escape()',
+	caniuse: ['javascript', 'builtins', 'RegExp', 'escape'],
+	fn: (): boolean => {
+		return 'escape' in RegExp
+	},
+} as const
+
+/**
+ * H: JUST RELEASED: Chrome 123 (Released 2024-03-19)
+ * H: JUST RELEASED: Firefox 128 (Released 2024-07-09)
+ * l: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import/with
+ */
+export const importAttributes = {
+	key: 'importAttributes',
+	name: 'Import attributes',
+	caniuse: ['javascript', 'statements', 'import', 'import_attributes'],
+	fn: (): boolean => {
+		try {
+			new Function(
+				'return import("data:application/json,{}", { with: { type: "json" } })',
+			)
+			return true
+		} catch {
+			return false
+		}
+	},
+} as const
